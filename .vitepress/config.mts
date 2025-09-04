@@ -8,7 +8,7 @@ const settings = {
   description: {
     short:
       'Easily Deploy a Docker Swarm or Compose Stack File to a Remote Host over SSH from the Actions Workspace.',
-    long: 'Easily Deploy a Docker Swarm Stack or Compose Stack File to a Remote Host over SSH with Keyfile or Password Authentication from the Actions Workspace.',
+    long: 'Easily Deploy a Docker Swarm or Compose Stack File to a Remote Docker host over SSH with Keyfile or Password Authentication from the Actions Workspace.',
   },
   image: '/images/logo/logo512.png',
   color: '#0064FC',
@@ -122,8 +122,8 @@ export default defineConfig({
         base: '/guides',
         items: [
           { text: 'Get Started', link: '/get-started' },
-          { text: 'Features', link: '/features' },
           { text: 'Examples', link: '/examples' },
+          { text: 'Features', link: '/features' },
           //
         ],
       },
@@ -158,13 +158,13 @@ export default defineConfig({
     },
 
     search: {
-      provider: 'local',
-      // provider: 'algolia',
-      // options: {
-      //   appId: '92WIHGWBPF',
-      //   apiKey: '17f27bbfbb03ba96e4ca53714e29fe62',
-      //   indexName: 'stack-deploy-docs',
-      // },
+      // provider: 'local',
+      provider: 'algolia',
+      options: {
+        appId: 'EW5LL0AH1S',
+        apiKey: '3f12593e3e1384f0a82282a8d8eb2e47',
+        indexName: 'docker-stack-deploy-docs',
+      },
     },
 
     // footer: {

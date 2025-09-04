@@ -6,6 +6,8 @@ prev:
 
 # Getting Started
 
+<span style="display:none;/*Search Keywords*/">install setup</span>
+
 To get started, create or update your [workflow file](#workflow) and review the [usage](#secrets).
 
 ## Workflow
