@@ -6,9 +6,11 @@ prev:
 
 # Getting Started
 
-<span style="display:none;/*Search Keywords*/">install setup</span>
+<span style="display:none;/*Search Keywords*/">Install and Setup Guide.</span>
 
 To get started, create or update your [workflow file](#workflow) and review the [usage](#secrets).
+
+_You can also view the [features](features.md) and additional [examples](examples.md)._
 
 ## Workflow
 
@@ -79,3 +81,14 @@ See the [Inputs Documentation](../docs/inputs.md) for more options to customize 
 ::: info FEATURE REQUEST
 If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
 :::
+
+## Portainer
+
+If you use Portainer, you should deploy directly to [Portainer](https://www.portainer.io/resources/get-started/install) for full control.
+
+For this you should use: [cssnr/portainer-stack-deploy-action](https://github.com/cssnr/portainer-stack-deploy-action)
+
+- https://github.com/marketplace/actions/portainer-stack-deploy-action
+
+For more details see the [README.md](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#readme) on GitHub.
+[Support](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#Support) is also available.
