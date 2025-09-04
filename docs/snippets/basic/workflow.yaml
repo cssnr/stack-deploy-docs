@@ -1,0 +1,27 @@
+name: "Docker Stack Deploy"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v5
+
+      # Add Steps to Prepare Your Stack File or Environment...
+
+      - name: "Stack Deploy"
+        uses: cssnr/stack-deploy-action@v1
+        with:
+          name: "stack-name" # set to your stack name
+          file: "docker-compose.yaml" # set to your compose file
+          host: ${{ secrets.DOCKER_HOST }}
+          user: ${{ secrets.DOCKER_USER }}
+          port: 22 # 22 is default, you can remove or change this
+          pass: ${{ secrets.DOCKER_PASS }} # not needed with ssh_key
+          ssh_key: ${{ secrets.DOCKER_SSH_KEY }} # not needed with pass
+          mode: swarm # if not using swarm set to: compose

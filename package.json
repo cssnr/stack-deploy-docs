@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
+    "preview": "vitepress preview .",
+    "prettier": "npx prettier --check ."
+  },
+  "dependencies": {
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-group-icons": "^1.6.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
