@@ -6,7 +6,7 @@ prev:
 
 # Getting Started
 
-<span style="display:none;/*Search Keywords*/">Install and Setup Guide.</span>
+<span class="search-keywords">Install and Setup Guide.</span>
 
 To get started, create or update your [workflow file](#workflow) and review the [usage](#secrets).
 

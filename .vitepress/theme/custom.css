@@ -21,3 +21,7 @@ summary {
     display: inline-block;
     margin-right: 8px;
 }
+
+.search-keywords {
+    display: none;
+}

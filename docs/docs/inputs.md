@@ -18,9 +18,9 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 | [pass](#pass-ssh-key) **\***                  | -                                   | Remote Docker Password                                        |
 | [ssh_key](#pass-ssh-key) **\***               | -                                   | Remote SSH Key File                                           |
 | [disable_keyscan](#disable-keyscan)           | `false`                             | Disable SSH Keyscan `ssh-keyscan`                             |
-| [env_file](#env_-ile)                         | -                                   | Exported Environment File                                     |
+| [env_file](#env-file)                         | -                                   | Exported Environment File                                     |
 | [detach](#detach) **²**                       | `true`                              | Detach Flag, `false`, to disable                              |
-| [prune](#prune) **²**                         | `false`                             | Prune Flag, `true`, to enable                                 |
+| prune **²**                                   | `false`                             | Prune Flag, `true`, to enable                                 |
 | [resolve_image](#resolve-image) **²**         | `always`                            | Resolve [`always`, `changed`, `never`]                        |
 | [registry_auth](#registry-auth) **²**         | -                                   | Enable Registry Authentication                                |
 | [registry_host](#registry-host)               | -                                   | Registry Authentication Host                                  |
@@ -44,18 +44,18 @@ Example: `cool-stack`
 
 Stack file or Compose file(s).
 
-Compose: Multiple files can be provided, space seperated.  
+_Compose._ Multiple files can be provided, space seperated.  
 This will prepend the `-f` flag to each file.
 
 Example: `web.yaml db.yaml`
 
 ### mode
 
-_Compose only._ Set this to `compose` to use `compose up` instead of `stack deploy` for non-swarm hosts.
+**Compose Only.** Set this to `compose` to use `compose up` instead of `stack deploy` for non-swarm hosts.
 
 ### args
 
-_Compose only._ Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
+**Compose Only.** Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
 The `detach` flag defaults to false for compose. With no args the default is `--remove-orphans --force-recreate`.
 Use an empty string to override. For more details, see the compose
 [docs](https://docs.docker.com/reference/cli/docker/compose/up/).
@@ -76,23 +76,28 @@ This will disable the `ssh-keyscan` command. Advanced use only.
 ### env_file
 
 Variables in this file are exported before running stack deploy.
-To use a docker `env_file` specify it in your compose file and make it available in a previous step.
 If you need compose file templating this can also be done in a previous step.
 If using `mode: compose` you can also add the `compose_arg: --env-file stringArray`.
 
+::: tip IMPORTANT
+**This is NOT** the Docker compose [env_file](https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/#use-the-env_file-attribute) directive.
+That is set in your compose file as normal.
+:::
+
 ### detach
 
-_Swarm only._ Set this to `false` to not exit immediately and wait for the services to converge.
+**Swarm Only.** Set this to `false` to not exit immediately and wait for the services to converge.
 This will generate extra output in the logs and is useful for debugging deployments.
+
 Defaults to `false` in `mode: compose`.
 
 ### resolve_image
 
-_Swarm only._ When the default `always` is used, this argument is omitted.
+**Swarm Only.** When the default `always` is used, this argument is omitted.
 
 ### registry_auth
 
-_Swarm only._ Set to `true` to deploy with `--with-registry-auth`.
+**Swarm Only.** Set to `true` to deploy with `--with-registry-auth`.
 
 If setting `registry_user/registry_pass` this is implied.
 
@@ -109,3 +114,5 @@ Required to run `docker login` before stack deploy.
 ### summary
 
 Write a Summary for the job. To disable this set to `false`.
+
+For more information see [Job Summary](../guides/features.md#job-summary).
