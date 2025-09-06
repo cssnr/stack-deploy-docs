@@ -5,6 +5,5 @@
     file: "docker-compose.yaml"
     host: ${{ secrets.DOCKER_HOST }}
     user: ${{ secrets.DOCKER_USER }}
-    port: ${{ secrets.DOCKER_PORT }} # default 22
     pass: ${{ secrets.DOCKER_PASS }} # not needed with ssh_key
     ssh_key: ${{ secrets.DOCKER_SSH_KEY }} # not needed with pass

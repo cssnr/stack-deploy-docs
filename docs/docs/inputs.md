@@ -46,7 +46,8 @@ Stack file or Compose file(s).
 
 _Swarm._ Only supports 1 file per stack.
 
-_Compose._ [Multiple files](https://docs.docker.com/compose/how-tos/multiple-compose-files/) can be provided, space seperated. and the `-f` flag will be prepended to each file.
+_Compose._ [Multiple files](https://docs.docker.com/compose/how-tos/multiple-compose-files/) can be provided, **space seperated**,
+and the `-f` flag will be automatically prepended to each file.
 
 Example: `web.yaml db.yaml`  
 Output: `-f web.yaml -f db.yaml`
@@ -55,7 +56,8 @@ Output: `-f web.yaml -f db.yaml`
 
 Enable Docker Compose mode by setting this to `compose`.
 
-Ths deploy will use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/) instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/deploy/) for non-swarm hosts.
+Ths deploy will use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/)
+instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/deploy/) for non-swarm hosts.
 
 Example: `compose`
 

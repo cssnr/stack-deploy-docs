@@ -1,4 +1,4 @@
-name: "Stack Deploy Action"
+name: "Docker Stack Deploy"
 
 on:
   workflow_dispatch:
@@ -71,9 +71,10 @@ jobs:
           name: "stack-name"
           file: "docker-compose.yaml"
           host: ${{ secrets.DOCKER_HOST }}
-          port: ${{ secrets.DOCKER_PORT }}
           user: ${{ secrets.DOCKER_USER }}
-          ssh_key: ${{ secrets.DOCKER_SSH_KEY }}
+          port: 22 # 22 is default, you can remove or change this
+          pass: ${{ secrets.DOCKER_PASS }} # not needed with ssh_key
+          ssh_key: ${{ secrets.DOCKER_SSH_KEY }} # not needed with pass
 
   cleanup:
     name: "Cleanup"

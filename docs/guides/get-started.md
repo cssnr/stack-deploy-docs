@@ -6,7 +6,7 @@ prev:
 
 # Getting Started
 
-<span class="search-keywords">Install and Setup Guide.</span>
+<span class="search-keywords">Install and Setup Guide to Begin.</span>
 
 To get started, create or update your [workflow file](#workflow) and review the [usage](#secrets).
 
@@ -25,7 +25,7 @@ _If creating a [new workflow](https://docs.github.com/en/actions/concepts/workfl
 
 **Make sure to update the highlighted lines.**
 
-The only required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), `user`
+The only 4 required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), `user`
 and [pass](../docs/inputs.md#pass-ssh-key) or [ssh_key](../docs/inputs.md#pass-ssh-key) _(not both)_.
 
 > See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
