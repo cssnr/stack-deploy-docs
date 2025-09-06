@@ -4,7 +4,7 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 
 ## Reference
 
-💡 You can click on each input for more [Details](#details).
+💡 You can click on an input for more [Details](#details).
 
 | Input&nbsp;Name                               | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
 | :-------------------------------------------- | :---------------------------------- | :------------------------------------------------------------ |
@@ -36,26 +36,32 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 
 ### name
 
-the stack name for Swarm and project name for Compose.
+Swarm sack name or Compose project name.
 
 Example: `cool-stack`
 
 ### file
 
-Stack file or Compose file(s). _Swarm_ only supports 1 file per stack.
+Stack file or Compose file(s).
+
+_Swarm._ Only supports 1 file per stack.
 
 _Compose._ [Multiple files](https://docs.docker.com/compose/how-tos/multiple-compose-files/) can be provided, space seperated. and the `-f` flag will be prepended to each file.
 
 Example: `web.yaml db.yaml`  
 Output: `-f web.yaml -f db.yaml`
 
-### mode
+### mode <Badge type="warning">Compose Only</Badge> {#mode}
 
-**Compose Only.** Set this to `compose` to use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/) instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/deploy/) for non-swarm hosts.
+Enable Docker Compose mode by setting this to `compose`.
 
-### args
+Ths deploy will use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/) instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/deploy/) for non-swarm hosts.
 
-**Compose Only.** Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
+Example: `compose`
+
+### args <Badge type="warning">Compose Only</Badge> {#args}
+
+Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
 The `detach` flag defaults to false for compose. With no args the default is `--remove-orphans --force-recreate`.
 Use an empty string to override. For more details, see the compose
 [docs](https://docs.docker.com/reference/cli/docker/compose/up/).
@@ -94,10 +100,10 @@ dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
 You must provide either a `pass` or `ssh_key`, but **not** both.
 
 When using a password, a temporary key is generated using [ssh-keygen](https://linux.die.net/man/1/ssh-copy-id)
-and copied to the host using [ssh-copy-id](https://linux.die.net/man/1/ssh-copy-id).
-The authorized_keys file is [cleaned up](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh#L10) after each deploy.
+and copied to the host with [ssh-copy-id](https://linux.die.net/man/1/ssh-copy-id) using [sshpass](https://linux.die.net/man/1/sshpass).
+The authorized_keys file entry is [cleaned up](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh#L10) after each deploy.
 
-To generate an SSH run the following as the `user` you are using:
+To generate an SSH key, run the following as the `user` you are using:
 
 ::: code-group
 
@@ -121,29 +127,36 @@ This will disable the [ssh-keyscan](https://linux.die.net/man/1/ssh-keyscan) com
 
 Variables in this file are exported before running stack deploy.
 If you need compose file templating this can also be done in a previous step.
-If using `mode: compose` you can also add the `compose_arg: --env-file stringArray`.
+
+_Compose._ You can also add to the [args](#args) with `--env-file stringArray`.
 
 ::: tip IMPORTANT
 **This is NOT** the Docker compose [env_file](https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/#use-the-env_file-attribute) directive.
 That is set in your compose file as normal.
 :::
 
-### detach
+### detach <Badge type="warning">Swarm Only</Badge> {#detach}
 
-**Swarm Only.** Set this to `false` to not exit immediately and wait for the services to converge.
+Set this to `false` to not exit immediately and wait for the services to converge.
 This will generate extra output in the logs and is useful for debugging deployments.
 
 Defaults to `false` in `mode: compose`.
 
-### resolve_image
+See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-**Swarm Only.** When the default `always` is used, this argument is omitted.
+### resolve_image <Badge type="warning">Swarm Only</Badge> {#resolve-image}
 
-### registry_auth
+When the default `always` is used, this argument is omitted.
 
-**Swarm Only.** Set to `true` to deploy with `--with-registry-auth`.
+See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-If setting `registry_user`/`registry_pass` this is implied.
+### registry_auth <Badge type="warning">Swarm Only</Badge> {#registry-auth}
+
+Set to `true` to deploy with `--with-registry-auth`.
+
+If setting [registry_user](#registry-user-registry-pass)/[registry_pass](#registry-user-registry-pass) this is implied.
+
+See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
 ### registry_host
 

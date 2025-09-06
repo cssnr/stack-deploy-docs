@@ -4,12 +4,14 @@ Deploy a Docker [stack](https://docs.docker.com/reference/cli/docker/stack/deplo
 using a [remote context](https://docs.docker.com/engine/manage-resources/contexts/). This deploys the stack from the current workspace without copying files.
 
 - Deploy to Docker Swarm or Compose.
-- Deploy over SSH using keyfile or password.
+- Deploy over SSH using [keyfile](../docs/inputs.md#pass-ssh-key) or [password](../docs/inputs.md#pass-ssh-key).
 - Deploy from the current working directory.
-- Deploy from a private registry with credentials.
+- Deploy from a private registry with [credentials](../docs/inputs.md#registry-user-registry-pass).
 - [Job Summary](#job-summary) with deployment output, including errors.
-- Supports multiple compose file and stack deployments.
-- Allows setting custom arguments for the deployment command.
+- Supports multiple compose [files](../docs/inputs.md#file) and stack deployments.
+- Allows setting custom [arguments](../docs/inputs.md#args) for the deployment command.
+
+See the [Inputs Documentation](../docs/inputs.md) for more options.
 
 You can [get started here](get-started.md) or view [workflow examples](examples.md).
 

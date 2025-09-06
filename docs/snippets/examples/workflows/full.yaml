@@ -69,7 +69,7 @@ jobs:
         uses: cssnr/stack-deploy-action@v1
         with:
           name: "stack-name"
-          file: "docker-compose-swarm.yaml"
+          file: "docker-compose.yaml"
           host: ${{ secrets.DOCKER_HOST }}
           port: ${{ secrets.DOCKER_PORT }}
           user: ${{ secrets.DOCKER_USER }}

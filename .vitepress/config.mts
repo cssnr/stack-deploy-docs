@@ -122,8 +122,8 @@ export default defineConfig({
         base: '/guides',
         items: [
           { text: 'Get Started', link: '/get-started' },
-          { text: 'Examples', link: '/examples' },
           { text: 'Features', link: '/features' },
+          { text: 'Examples', link: '/examples' },
           //
         ],
       },

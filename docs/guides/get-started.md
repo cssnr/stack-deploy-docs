@@ -25,28 +25,29 @@ _If creating a [new workflow](https://docs.github.com/en/actions/concepts/workfl
 
 **Make sure to update the highlighted lines.**
 
-The only required inputs are `name`, `host`, `user` and `pass` or `ssh_key` _(not both)_.
+The only required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), `user`
+and [pass](../docs/inputs.md#pass-ssh-key) or [ssh_key](../docs/inputs.md#pass-ssh-key) _(not both)_.
 
-See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
+> See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
 
 ## Usage
 
 The stack is deployed from the current actions working directory (no files copied). Therefore, all paths are relative to the actions' directory.
 
-If you check out your repository to the root and your compose file is in the `app` directory, set `file` to: `app/docker-compose.yaml`
+If you check out your repository to the root and your compose file is in the `app` directory, set [file](../docs/inputs.md#file) to: `app/docker-compose.yaml`
 
 If using the [env_file](https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/#use-the-env_file-attribute) compose directive in your stack file, this file's path would be relative to your `docker-compose.yaml` file.
 
 The workflow runs based on the [events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows) defined in the `on:` parameter.
 If using the `workflow_dispatch` trigger you can [manually run the job](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow) at any time.
 
-There are many more [options](../docs/inputs.md) to customize your deployment.
+> See the [Inputs Documentation](../docs/inputs.md) for more options to customize your deployment.
 
 ## Secrets
 
 You should store your credentials in [GitHub Actions Secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
-The SSH Key should be copied and pasted exactly as it appears in the private key file.
+The [SSH key](../docs/inputs.md#pass-ssh-key) should be copied and pasted exactly as it appears in the private key file.
 
 You do not need to add all values as a secret. However, be aware that any inputs not added as a secret,
 will be visible in the [GitHub Actions Logs](https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs).
@@ -76,11 +77,7 @@ Compose Note: `"${STACK_FILES[@]}"` is an array of `-f docker-compose.yaml` for 
 
 You can view the full deployment script on GitHub: [src/main.sh](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh)
 
-See the [Inputs Documentation](../docs/inputs.md) for more options to customize the deployment.
-
-::: info FEATURE REQUEST
-If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
-:::
+> See the [Inputs Documentation](../docs/inputs.md) for more options to customize the deployment.
 
 ## Portainer
 
@@ -92,3 +89,7 @@ For this you should use: [cssnr/portainer-stack-deploy-action](https://github.co
 
 For more details see the [README.md](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#readme) on GitHub.
 [Support](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#Support) is also available.
+
+::: info FEATURE REQUEST
+If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
+:::
