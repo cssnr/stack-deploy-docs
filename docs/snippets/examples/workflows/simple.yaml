@@ -1,0 +1,24 @@
+name: "Stack Deploy Action"
+
+on:
+  push:
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Stack Deploy"
+        uses: cssnr/stack-deploy-action@v1
+        with:
+          name: "stack-name"
+          file: "docker-compose-swarm.yaml"
+          host: ${{ secrets.DOCKER_HOST }}
+          port: ${{ secrets.DOCKER_PORT }}
+          user: ${{ secrets.DOCKER_USER }}
+          pass: ${{ secrets.DOCKER_PASS }}

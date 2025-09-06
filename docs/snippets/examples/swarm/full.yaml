@@ -1,0 +1,19 @@
+- name: "Stack Deploy"
+  uses: cssnr/stack-deploy-action@v1
+  with:
+    name: "stack-name"
+    file: "docker-compose-swarm.yaml"
+    host: ${{ secrets.DOCKER_HOST }}
+    port: ${{ secrets.DOCKER_PORT }}
+    user: ${{ secrets.DOCKER_USER }}
+    pass: ${{ secrets.DOCKER_PASS }} # not needed with ssh_key
+    ssh_key: ${{ secrets.DOCKER_SSH_KEY }} # not needed with pass
+    env_file: "stack.env"
+    detach: true
+    prune: false
+    resolve_image: "always"
+    registry_auth: true # not needed with registry_pass/registry_user
+    registry_host: "ghcr.io"
+    registry_user: ${{ vars.GHCR_USER }}
+    registry_pass: ${{ secrets.GHCR_PASS }}
+    summary: true
