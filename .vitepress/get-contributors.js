@@ -1,5 +1,27 @@
 #!/usr/bin/env node
 const fs = require('fs')
+const path = require('path')
+
+const repo = process.argv[2]
+const file = process.argv[3] ?? '.vitepress/contributors.json'
+console.log(`get-contributors - repo: ${repo} - file: ${file}`)
+
+if (!repo || !file) {
+    console.error('Usage: npm run get-contributors user/repo')
+    process.exit(1)
+}
+
+fs.mkdirSync(path.dirname(file), { recursive: true })
+
+getAllContributors(repo)
+    .then((data) => {
+        // console.log('data:', data)
+        fs.writeFileSync(file, JSON.stringify(data), 'utf8')
+    })
+    .catch((e) => {
+        console.error(e)
+        fs.writeFileSync(file, JSON.stringify([]), 'utf8')
+    })
 
 async function getAllContributors(repo) {
     let results = []
@@ -32,18 +54,3 @@ async function getAllContributors(repo) {
 
     return results
 }
-
-const repo = process.argv[2]
-const file = process.argv[3] ?? '.vitepress/contributors.json'
-console.log(`get-contributors - repo: ${repo} - file: ${file}`)
-if (!repo || !file) {
-    console.error('Usage: npm run get-contributors user/repo')
-    process.exit(1)
-}
-
-getAllContributors(repo)
-    .then((data) => {
-        // console.log('data:', data)
-        fs.writeFileSync(file, JSON.stringify(data), 'utf8')
-    })
-    .catch(console.error)
