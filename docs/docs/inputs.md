@@ -12,7 +12,7 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 | [file](#file)                                 | `docker-compose.yaml`               | Docker Stack/Compose File(s)                                  |
 | [mode](#mode) **¹**                           | `swarm`                             | Deploy Mode [`swarm`, `compose`]                              |
 | [args](#args) **¹**                           | `--remove-orphans --force-recreate` | Additional **Compose** Arguments                              |
-| [host](#host)                                 | -                                   | Remote Docker Hostname or IP                                  |
+| [host](#host) **\***                          | -                                   | Remote Docker Hostname or IP                                  |
 | port                                          | `22`                                | Remote Docker Port                                            |
 | user **\***                                   | -                                   | Remote Docker Username                                        |
 | [pass](#pass-ssh-key) **\***                  | -                                   | Remote Docker Password                                        |

@@ -90,6 +90,8 @@ For this you should use: [cssnr/portainer-stack-deploy-action](https://github.co
 For more details see the [README.md](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#readme) on GitHub.
 [Support](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#Support) is also available.
 
+&nbsp;
+
 ::: info FEATURE REQUEST
 If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
 :::

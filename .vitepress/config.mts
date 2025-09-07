@@ -38,6 +38,7 @@ export default defineConfig({
     config(md) {
       md.use(groupIconMdPlugin)
     },
+    // toc: { level: [2] },
   },
 
   title: settings.title,
@@ -124,6 +125,7 @@ export default defineConfig({
           { text: 'Get Started', link: '/get-started' },
           { text: 'Features', link: '/features' },
           { text: 'Examples', link: '/examples' },
+          { text: 'Resources', link: '/resources' },
           //
         ],
       },
