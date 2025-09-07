@@ -81,3 +81,7 @@ features:
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=support)](https://ko-fi.com/cssnr)
 
 </div>
+
+---
+
+<Contributors />

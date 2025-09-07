@@ -3,7 +3,9 @@
     "dev": "vitepress dev .",
     "build": "vitepress build .",
     "preview": "vitepress preview .",
-    "prettier": "npx prettier --check ."
+    "prettier": "npx prettier --check .",
+    "get-contributors": "node .vitepress/get-contributors.js cssnr/stack-deploy-action",
+    "postinstall": "npm run get-contributors"
   },
   "dependencies": {
     "vitepress": "^1.6.4",
