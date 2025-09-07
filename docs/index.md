@@ -39,8 +39,11 @@ features:
 ---
 
 <style>
-.badges > p {
+div.badges {
     margin-top: 80px;
+}
+
+.badges > p {
     text-align: center;
 }
 
@@ -57,9 +60,21 @@ features:
 .badges img:hover {
     transform: scale(1.05);
 }
+
+.contributors {
+    margin-top: 20px;
+}
+
+.contributors-heading {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.5em;
+}
 </style>
 
 <div class="badges">
+
+---
 
 [![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/stack-deploy-action?sort=semver&filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/stack-deploy-action/tags)
 [![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/stack-deploy-action?sort=semver&filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/stack-deploy-action/releases)
@@ -82,6 +97,6 @@ features:
 
 </div>
 
----
+<div class="contributors-heading">Contributors</div>
 
 <Contributors />
