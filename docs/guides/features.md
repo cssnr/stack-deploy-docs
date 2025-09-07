@@ -1,11 +1,11 @@
 # Features
 
 Deploy a Docker [stack](https://docs.docker.com/reference/cli/docker/stack/deploy/) or [compose](https://docs.docker.com/reference/cli/docker/compose/up/) file, to a remote host over SSH,
-using a [remote context](https://docs.docker.com/engine/manage-resources/contexts/). This deploys the stack from the current workspace without copying files.
+using a [Remote Context](#remote-context). This deploys the stack from the current workspace without copying files.
 
 - Deploy to Docker Swarm or Compose.
 - Deploy over SSH using [keyfile](../docs/inputs.md#pass-ssh-key) or [password](../docs/inputs.md#pass-ssh-key).
-- Deploy from the current working directory.
+- Deploy from the current working [directory](#remote-context).
 - Deploy from a private registry with [credentials](../docs/inputs.md#registry-user-registry-pass).
 - [Job Summary](#job-summary) with deployment output, including errors.
 - Supports multiple compose [files](../docs/inputs.md#file) and stack deployments.
@@ -19,6 +19,37 @@ You can [get started here](get-started.md) or view [workflow examples](examples.
 If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
 :::
 
+## Remote Context
+
+This action uses a [remote context](https://docs.docker.com/engine/manage-resources/contexts/)
+to deploy the stack on the remote host, from the current environment.
+
+```shell
+docker context create remote --docker "host=ssh://user@host:port"
+docker context use remote
+```
+
+After this all the subsequent `docker` commands, such as `stack deploy` and `compose up` are executed on the remote context (host).
+
+This allows you to run any steps to prepare your stack for deployment, in the workflow steps directly, without needing to copy any files.
+
+::: details View workflow steps example
+
+```yaml
+steps:
+  - name: 'Checkout'
+    uses: actions/checkout@v5
+
+  # Add Steps to Prepare Your Stack File or Environment...
+
+  - name: 'Stack Deploy'
+    uses: cssnr/stack-deploy-action@v1
+    with:
+      # inputs excluded
+```
+
+:::
+
 ## Job Summary
 
 Unless disabled, a Job Summary is generated to capture the command, output and errors.
@@ -29,28 +60,7 @@ Unless disabled, a Job Summary is generated to capture the command, output and e
 
 ---
 
-🚀 Swarm Stack `test_stack-deploy` Successfully Deployed.
-
-```text
-docker stack deploy -c docker-compose.yaml --detach=false --resolve-image=changed test_stack-deploy
-```
-
-<details><summary>Results</summary>
-
-```text
-Updating service test_stack-deploy_alpine (id: tdk8v42m0rvp9hz4rbfrtszb6)
-1/1:
-overall progress: 0 out of 1 tasks
-overall progress: 1 out of 1 tasks
-verify: Waiting 5 seconds to verify that tasks are stable...
-verify: Waiting 4 seconds to verify that tasks are stable...
-verify: Waiting 3 seconds to verify that tasks are stable...
-verify: Waiting 2 seconds to verify that tasks are stable...
-verify: Waiting 1 seconds to verify that tasks are stable...
-verify: Service tdk8v42m0rvp9hz4rbfrtszb6 converged
-```
-
-</details>
+<!--@include: ./include/summary-success.md-->
 
 :::
 
@@ -58,20 +68,7 @@ verify: Service tdk8v42m0rvp9hz4rbfrtszb6 converged
 
 ---
 
-⛔ Swarm Stack `test_stack-deploy` Failed to Deploy!
-
-```text
-docker stack deploy -c docker-compose.yaml --detach=false --resolve-image=changed test_stack-deploy
-```
-
-<details open><summary>Errors</summary>
-
-```text
-Creating network test_stack-deploy_default
-failed to create network test_stack-deploy_default: Error response from daemon: network with name test_stack-deploy_default already exists
-```
-
-</details>
+<!--@include: ./include/summary-failed.md-->
 
 :::
 

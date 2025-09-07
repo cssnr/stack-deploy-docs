@@ -19,9 +19,9 @@ jobs:
         with:
           name: "stack-name" # set to your stack name
           file: "docker-compose.yaml" # set to your compose file
+          mode: "swarm" # if not using swarm set to "compose"
           host: ${{ secrets.DOCKER_HOST }}
           user: ${{ secrets.DOCKER_USER }}
           port: 22 # 22 is default, you can remove or change this
           pass: ${{ secrets.DOCKER_PASS }} # not needed with ssh_key
           ssh_key: ${{ secrets.DOCKER_SSH_KEY }} # not needed with pass
-          mode: swarm # if not using swarm set to: compose

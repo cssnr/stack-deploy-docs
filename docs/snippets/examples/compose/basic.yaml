@@ -3,8 +3,8 @@
   with:
     name: "stack-name"
     file: "docker-compose.yaml"
+    mode: "compose"
     host: ${{ secrets.DOCKER_HOST }}
     user: ${{ secrets.DOCKER_USER }}
     pass: ${{ secrets.DOCKER_PASS }} # not needed with ssh_key
     ssh_key: ${{ secrets.DOCKER_SSH_KEY }} # not needed with pass
-    mode: compose

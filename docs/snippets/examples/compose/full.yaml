@@ -3,6 +3,7 @@
   with:
     name: "stack-name"
     file: "docker-compose.yaml"
+    mode: "compose"
     host: ${{ secrets.DOCKER_HOST }}
     user: ${{ secrets.DOCKER_USER }}
     port: 22 # 22 is default, you can remove or change this
@@ -12,6 +13,5 @@
     registry_host: "ghcr.io"
     registry_user: ${{ vars.GHCR_USER }}
     registry_pass: ${{ secrets.GHCR_PASS }}
-    mode: compose
-    args: --remove-orphans --force-recreate
+    args: "--remove-orphans --force-recreate"
     summary: true
