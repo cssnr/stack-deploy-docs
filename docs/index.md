@@ -42,11 +42,12 @@ features:
 div.badges {
     margin-top: 80px;
 }
-
+.badges > hr {
+    margin-bottom: 24px;
+}
 .badges > p {
     text-align: center;
 }
-
 .badges img {
     display: inline-block;
     vertical-align: middle;
@@ -59,16 +60,6 @@ div.badges {
 }
 .badges img:hover {
     transform: scale(1.05);
-}
-
-.contributors {
-    margin-top: 20px;
-}
-
-.contributors-heading {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 1.5em;
 }
 </style>
 
@@ -97,6 +88,4 @@ div.badges {
 
 </div>
 
-<div class="contributors-heading">Contributors</div>
-
-<Contributors />
+<Contributors heading="Contributors"  margin="36px 0 96px" />

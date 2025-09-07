@@ -2,28 +2,29 @@
 const fs = require('fs')
 const path = require('path')
 
-const repo = process.argv[2]
-const file = process.argv[3] ?? '.vitepress/contributors.json'
-console.log(`get-contributors - repo: ${repo} - file: ${file}`)
+;(async () => {
+    const repo = process.argv[2]
+    const file = process.argv[3] ?? '.vitepress/contributors.json'
+    console.log(`get-contributors - repo: ${repo} - file: ${file}`)
 
-if (!repo || !file) {
-    console.error('Usage: npm run get-contributors user/repo')
-    process.exit(1)
-}
+    if (!repo || !file) {
+        console.error('Usage: node get-contributors.js user/repo [contributors.json]')
+        process.exit(1)
+    }
 
-fs.mkdirSync(path.dirname(file), { recursive: true })
+    fs.mkdirSync(path.dirname(file), { recursive: true })
 
-getAllContributors(repo)
-    .then((data) => {
-        // console.log('data:', data)
-        fs.writeFileSync(file, JSON.stringify(data), 'utf8')
-    })
-    .catch((e) => {
-        console.error(e)
-        fs.writeFileSync(file, JSON.stringify([]), 'utf8')
-    })
+    let data = []
+    try {
+        data = await githubContributors(repo)
+    } catch (e) {
+        console.warn(e)
+    }
+    console.log(`get-contributors - contributors: ${data.length}`)
+    fs.writeFileSync(file, JSON.stringify(data), 'utf8')
+})()
 
-async function getAllContributors(repo) {
+async function githubContributors(repo) {
     let results = []
     let page = 1
 
@@ -32,6 +33,7 @@ async function getAllContributors(repo) {
         const data = { headers: { Accept: 'application/vnd.github+json' } }
 
         const response = await fetch(url, data)
+        // console.log('response:', response)
         if (!response.ok) break
 
         const contributors = await response.json()
