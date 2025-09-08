@@ -8,7 +8,7 @@ hero:
   tagline: Deploys a Docker Stack or Compose File to a Remote Host over SSH from the Workspace.
   image:
     src: /images/logo/logo512.png
-    alt: VitePress Docker Stack Deploy Action
+    alt: Docker Stack Deploy Action
   actions:
     - text: Get Started
       link: /guides/get-started
@@ -64,12 +64,11 @@ div.badges {
 
 ---
 
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/stack-deploy-action?logo=github&label=updated)](https://github.com/cssnr/stack-deploy-action/pulse)
-[![Codeberg Last Commit](https://img.shields.io/gitea/last-commit/cssnr/stack-deploy-action/master?gitea_url=https%3A%2F%2Fcodeberg.org%2F&logo=codeberg&logoColor=white&label=updated)](https://codeberg.org/cssnr/stack-deploy-action)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/stack-deploy-action?logo=github&label=updated)](https://github.com/cssnr/stack-deploy-action)
 [![Docs Last Commit](https://img.shields.io/github/last-commit/cssnr/stack-deploy-docs?logo=vitepress&logoColor=white&label=docs)](https://github.com/cssnr/stack-deploy-docs)
 [![GitHub Contributors](https://img.shields.io/github/contributors/cssnr/stack-deploy-action?logo=github)](https://github.com/cssnr/stack-deploy-action/graphs/contributors)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/stack-deploy-action?logo=bookstack&logoColor=white&label=size)](https://github.com/cssnr/stack-deploy-action)
-[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/stack-deploy-action?logo=sharp&logoColor=white)](https://github.com/cssnr/stack-deploy-action)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/stack-deploy-action?logo=bookstack&logoColor=white&label=size)](https://github.com/cssnr/stack-deploy-action?tab=readme-ov-file#readme)
+[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/stack-deploy-action?logo=sharp&logoColor=white)](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh)
 [![GitHub Discussions](https://img.shields.io/github/discussions/cssnr/stack-deploy-action?logo=github)](https://github.com/cssnr/stack-deploy-action/discussions)
 [![GitHub Forks](https://img.shields.io/github/forks/cssnr/stack-deploy-action?style=flat&logo=github)](https://github.com/cssnr/stack-deploy-action/forks)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/cssnr/stack-deploy-action?style=flat&logo=github)](https://github.com/cssnr/stack-deploy-action/stargazers)

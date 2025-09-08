@@ -75,7 +75,7 @@ docker compose ${STACK_FILES[@]} -p ${INPUT_NAME} up -d -y ${EXTRA_ARGS[@]}
 
 :::
 
-**Compose.** To see how `${STACK_FILES[@]}` is generated see the [file](../docs/inputs.md#file) input documenation.
+**Compose.** To see how `${STACK_FILES[@]}` is generated see the [file](../docs/inputs.md#file) input documentation.
 
 You can view the full deployment script on GitHub: [src/main.sh](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh)
 
