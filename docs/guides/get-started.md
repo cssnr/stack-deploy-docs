@@ -8,7 +8,7 @@ prev:
 
 <span class="search-keywords">Install and Setup Guide to Begin.</span>
 
-To get started, create or update your [workflow file](#workflow) and review the [usage](#secrets).
+To get started, create or update your [workflow file](#workflow) and review the [usage](#usage).
 
 _You can also view the [features](features.md) and additional [examples](examples.md)._
 

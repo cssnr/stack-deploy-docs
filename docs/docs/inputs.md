@@ -52,7 +52,7 @@ and the `-f` flag will be automatically prepended to each file.
 Example: `web.yaml db.yaml`  
 Output: `-f web.yaml -f db.yaml`
 
-### mode <Badge type="warning">Compose Only</Badge> {#mode}
+### mode <Badge type="warning" text="Compose Only" />
 
 Enable Docker Compose mode by setting this to `compose`.
 
@@ -61,7 +61,7 @@ instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/dep
 
 Example: `compose`
 
-### args <Badge type="warning">Compose Only</Badge> {#args}
+### args <Badge type="warning" text="Compose Only" /> {#args}
 
 Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
 The `detach` flag defaults to false for compose. With no args the default is `--remove-orphans --force-recreate`.
@@ -137,7 +137,7 @@ _Compose._ You can also add to the [args](#args) with `--env-file stringArray`.
 That is set in your compose file as normal.
 :::
 
-### detach <Badge type="warning">Swarm Only</Badge> {#detach}
+### detach <Badge type="warning" text="Swarm Only" /> {#detach}
 
 Set this to `false` to not exit immediately and wait for the services to converge.
 This will generate extra output in the logs and is useful for debugging deployments.
@@ -146,13 +146,13 @@ Defaults to `false` in `mode: compose`.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### resolve_image <Badge type="warning">Swarm Only</Badge> {#resolve-image}
+### resolve_image <Badge type="warning" text="Swarm Only" /> {#resolve-image}
 
 When the default `always` is used, this argument is omitted.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### registry_auth <Badge type="warning">Swarm Only</Badge> {#registry-auth}
+### registry_auth <Badge type="warning" text="Swarm Only" /> {#registry-auth}
 
 Set to `true` to deploy with `--with-registry-auth`.
 
