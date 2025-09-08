@@ -9,9 +9,9 @@ const props = defineProps({
 })
 
 const outerStyle = { margin: props.margin }
-console.log('outerStyle:', outerStyle)
+// console.log('outerStyle:', outerStyle)
 const imageStyle = { width: `${props.size}px`, height: `${props.size}px` }
-console.log('imageStyle:', imageStyle)
+// console.log('imageStyle:', imageStyle)
 </script>
 
 <template>
@@ -43,7 +43,7 @@ console.log('imageStyle:', imageStyle)
 div.vp-contributors-heading {
   font-size: 32px;
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
 
 div.vp-contributors-images {

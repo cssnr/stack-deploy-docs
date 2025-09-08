@@ -61,19 +61,21 @@ _This is why I use the [cssnr](https://github.com/cssnr) organization._
 
 ## Command
 
-The command used to deploy the stack is generated depending on type.
+The command used to deploy the stack is generated depending on mode.
 
-```bash :line-numbers=179 [src/main.sh ~vscode-icons:file-type-shell~]
-if [[ "${INPUT_MODE}" == "swarm" ]];then
-    DEPLOY_TYPE="Swarm"
-    COMMAND=("docker" "stack" "deploy" "-c" "${INPUT_FILE}" "${EXTRA_ARGS[@]}" "${INPUT_NAME}")
-else
-    DEPLOY_TYPE="Compose"
-    COMMAND=("docker" "compose" "${STACK_FILES[@]}" "-p" "${INPUT_NAME}" "up" "-d" "-y" "${EXTRA_ARGS[@]}")
-fi
+::: code-group
+
+```shell [Swarm ~vscode-icons:file-type-shell~]
+docker stack deploy -c ${INPUT_FILE} ${EXTRA_ARGS[@]} ${INPUT_NAME}
 ```
 
-Compose Note: `"${STACK_FILES[@]}"` is an array of `-f docker-compose.yaml` for every file in the `file` input (supports multiple files).
+```shell [Compose ~vscode-icons:file-type-shell~]
+docker compose ${STACK_FILES[@]} -p ${INPUT_NAME} up -d -y ${EXTRA_ARGS[@]}
+```
+
+:::
+
+**Compose.** To see how `${STACK_FILES[@]}` is generated see the [file](../docs/inputs.md#file) input documenation.
 
 You can view the full deployment script on GitHub: [src/main.sh](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh)
 
