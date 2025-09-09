@@ -6,29 +6,29 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 
 💡 You can click on an input for more [Details](#details).
 
-| Input&nbsp;Name                               | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
-| :-------------------------------------------- | :---------------------------------- | :------------------------------------------------------------ |
-| [name](#name) **\***                          | -                                   | Docker Stack/Project Name                                     |
-| [file](#file)                                 | `docker-compose.yaml`               | Docker Stack/Compose File(s)                                  |
-| [mode](#mode) **¹**                           | `swarm`                             | Deploy Mode [`swarm`, `compose`]                              |
-| [args](#args) **¹**                           | `--remove-orphans --force-recreate` | Additional **Compose** Arguments                              |
-| [host](#host) **\***                          | -                                   | Remote Docker Hostname or IP                                  |
-| port                                          | `22`                                | Remote Docker Port                                            |
-| user **\***                                   | -                                   | Remote Docker Username                                        |
-| [pass](#pass-ssh-key) **\***                  | -                                   | Remote Docker Password                                        |
-| [ssh_key](#pass-ssh-key) **\***               | -                                   | Remote SSH Key File                                           |
-| [disable_keyscan](#disable-keyscan)           | `false`                             | Disable SSH Keyscan `ssh-keyscan`                             |
-| [env_file](#env-file)                         | -                                   | Exported Environment File                                     |
-| [detach](#detach) **²**                       | `true`                              | Detach Flag, `false`, to disable                              |
-| prune **²**                                   | `false`                             | Prune Flag, `true`, to enable                                 |
-| [resolve_image](#resolve-image) **²**         | `always`                            | Resolve [`always`, `changed`, `never`]                        |
-| [registry_auth](#registry-auth) **²**         | -                                   | Enable Registry Authentication                                |
-| [registry_host](#registry-host)               | -                                   | Registry Authentication Host                                  |
-| [registry_user](#registry-user-registry-pass) | -                                   | Registry Authentication Username                              |
-| [registry_pass](#registry-user-registry-pass) | -                                   | Registry Authentication Password                              |
-| [summary](#summary)                           | `true`                              | Add Job Summary                                               |
+| Input&nbsp;Name                       | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
+| :------------------------------------ | :---------------------------------- | :------------------------------------------------------------ |
+| [name](#name) **\***                  | -                                   | Docker Stack/Project Name                                     |
+| [file](#file)                         | `docker-compose.yaml`               | Docker Stack/Compose File(s)                                  |
+| [mode](#mode) **¹**                   | `swarm`                             | Deploy Mode [`swarm`, `compose`]                              |
+| [args](#args) **¹**                   | `--remove-orphans --force-recreate` | Additional **Compose** Arguments                              |
+| [host](#host) **\***                  | -                                   | Remote Docker Hostname or IP                                  |
+| [port](#port)                         | `22`                                | Remote Docker Port                                            |
+| [user](#user) **\***                  | -                                   | Remote Docker Username                                        |
+| [pass](#pass) **\***                  | -                                   | Remote Docker Password                                        |
+| [ssh_key](#ssh_key) **\***            | -                                   | Remote SSH Key File                                           |
+| [disable_keyscan](#disable_keyscan)   | `false`                             | Disable SSH Keyscan `ssh-keyscan`                             |
+| [env_file](#env_file)                 | -                                   | Exported Environment File                                     |
+| [detach](#detach) **²**               | `true`                              | Detach Flag, `false`, to disable                              |
+| [prune](#prune) **²**                 | `false`                             | Prune Flag, `true`, to enable                                 |
+| [resolve_image](#resolve_image) **²** | `always`                            | Resolve [`always`, `changed`, `never`]                        |
+| [registry_auth](#registry_auth) **²** | -                                   | Enable Registry Authentication                                |
+| [registry_host](#registry_host)       | -                                   | Registry Authentication Host                                  |
+| [registry_user](#registry_user)       | -                                   | Registry Authentication Username                              |
+| [registry_pass](#registry_pass)       | -                                   | Registry Authentication Password                              |
+| [summary](#summary)                   | `true`                              | Add Job Summary                                               |
 
-> **\* Required**, note [pass/ssh_key](#pass-ssh-key) are mutually exclusive.  
+> **\* Required**, note [pass](#pass)/[ssh_key](#ssh_key) are mutually exclusive.  
 > **¹ Compose Only**, view the [Compose Docs](https://docs.docker.com/reference/cli/docker/compose/up/)  
 > **² Swarm Only**, view the [Swarm Docs](https://docs.docker.com/reference/cli/docker/stack/deploy/)
 
@@ -97,15 +97,43 @@ dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
 
 :::
 
-### pass/ssh_key <Badge type="warning" text="Required" /> {#pass-ssh-key}
+### port
 
-You must provide either a `pass` or `ssh_key`, but **not** both.
+SSH Port. The default is 22.
+
+Only set this if using a non-standard port.
+
+Example: `2222`
+
+### user <Badge type="warning" text="Required" />
+
+SSH Username. This user **must** have permissions to access docker.
+
+If you use `sudo` or the `root` user to access docker,
+it is recommended you grant docker access to another user or service account.
+
+Replace `mynewuser` with your actual username.
+
+```shell [run ~vscode-icons:file-type-shell~]
+sudo usermod -aG docker mynewuser
+```
+
+After this you should be able to run `docker` commands as `mynewuser` without `sudo`.
+Note, you may need to log out and back in for the changes to take effect.
+
+### pass <Badge type="warning" text="Required" />
+
+You must provide either a `pass` or [ssh_key](#ssh_key), but **not** both.
 
 When using a password, a temporary key is generated using [ssh-keygen](https://linux.die.net/man/1/ssh-copy-id)
 and copied to the host with [ssh-copy-id](https://linux.die.net/man/1/ssh-copy-id) using [sshpass](https://linux.die.net/man/1/sshpass).
 The authorized_keys file entry is [cleaned up](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh#L10) after each deploy.
 
-To generate an SSH key, run the following as the `user` you are using:
+### ssh_key <Badge type="warning" text="Required" /> {#ssh_key}
+
+You must provide either a `ssh_key` or [pass](#pass), but **not** both.
+
+To generate an SSH key, run the following as the [user](#user) you are using:
 
 ::: code-group
 
@@ -121,11 +149,11 @@ cat ~/.ssh/id_ed25519
 
 :::
 
-### disable_keyscan
+### disable_keyscan {#disable_keyscan}
 
 This will disable the [ssh-keyscan](https://linux.die.net/man/1/ssh-keyscan) command. **Advanced usage only.**
 
-### env_file
+### env_file {#env_file}
 
 Variables in this file are exported before running stack deploy.
 If you need compose file templating this can also be done in a previous step.
@@ -146,27 +174,37 @@ Defaults to `false` in `mode: compose`.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### resolve_image <Badge type="tip" text="Swarm Only" /> {#resolve-image}
+### prune
+
+Prune dangling images. Set to `true` to enable.
+
+See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
+
+### resolve_image <Badge type="tip" text="Swarm Only" /> {#resolve_image}
 
 When the default `always` is used, this argument is omitted.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### registry_auth <Badge type="tip" text="Swarm Only" /> {#registry-auth}
+### registry_auth <Badge type="tip" text="Swarm Only" /> {#registry_auth}
 
 Set to `true` to deploy with `--with-registry-auth`.
 
-If setting [registry_user](#registry-user-registry-pass)/[registry_pass](#registry-user-registry-pass) this is implied.
+If setting [registry_user](#registry_user)/[registry_pass](#registry_pass) this is implied.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### registry_host
+### registry_host {#registry_host}
 
 To run [docker login](https://docs.docker.com/reference/cli/docker/login/) on another registry.
 
 Example: `ghcr.io`
 
-### registry_user/registry_pass
+### registry_pass {#registry_pass}
+
+Required to run [docker login](https://docs.docker.com/reference/cli/docker/login/) before stack deploy.
+
+### registry_user {#registry_user}
 
 Required to run [docker login](https://docs.docker.com/reference/cli/docker/login/) before stack deploy.
 

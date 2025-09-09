@@ -25,8 +25,8 @@ _If creating a [new workflow](https://docs.github.com/en/actions/concepts/workfl
 
 **Make sure to update the highlighted lines.**
 
-The only 4 required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), `user`
-and [pass](../docs/inputs.md#pass-ssh-key) or [ssh_key](../docs/inputs.md#pass-ssh-key) _(not both)_.
+The only 4 required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), [user](../docs/inputs.md#user)
+and [pass](../docs/inputs.md#pass) or [ssh_key](../docs/inputs.md#ssh_key) _(not both)_.
 
 > See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
 
@@ -47,7 +47,7 @@ If using the `workflow_dispatch` trigger you can [manually run the job](https://
 
 You should store your credentials in [GitHub Actions Secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
-The [SSH key](../docs/inputs.md#pass-ssh-key) should be copied and pasted exactly as it appears in the private key file.
+The [SSH key](../docs/inputs.md#ssh_key) should be copied and pasted exactly as it appears in the private key file.
 
 You do not need to add all values as a secret. However, be aware that any inputs not added as a secret,
 will be visible in the [GitHub Actions Logs](https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs).
