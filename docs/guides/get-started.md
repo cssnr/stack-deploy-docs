@@ -19,11 +19,11 @@ Add the step to an existing workflow or create a new one.
 _If creating a [new workflow](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows#about-workflows), place it in the `.github/workflows` directory._
 
 ::: code-group
-<<< @/snippets/basic/step.yaml {4,5,8,9,10,11 yaml} [Existing Workflow ~vscode-icons:folder-type-github~]
-<<< @/snippets/basic/workflow.yaml {15,20,21,24,25,26,27 yaml} [New Workflow ~vscode-icons:folder-type-github~]
+<<< @/snippets/basic/step.yaml {4,5,10,11 yaml} [Existing Workflow ~vscode-icons:folder-type-github~]
+<<< @/snippets/basic/workflow.yaml {17,18,23,24 yaml} [New Workflow ~vscode-icons:folder-type-github~]
 :::
 
-**Make sure to update the highlighted lines.**
+**Make sure to update the highlighted lines and add your [secrets](#secrets).**
 
 The only 4 required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), [user](../docs/inputs.md#user)
 and [pass](../docs/inputs.md#pass) or [ssh_key](../docs/inputs.md#ssh_key) _(not both)_.

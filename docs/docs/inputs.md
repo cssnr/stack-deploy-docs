@@ -22,7 +22,7 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 | [detach](#detach) **²**               | `true`                              | Detach Flag, `false`, to disable                              |
 | [prune](#prune) **²**                 | `false`                             | Prune Flag, `true`, to enable                                 |
 | [resolve_image](#resolve_image) **²** | `always`                            | Resolve [`always`, `changed`, `never`]                        |
-| [registry_auth](#registry_auth) **²** | -                                   | Enable Registry Authentication                                |
+| [registry_auth](#registry_auth) **²** | `false`                             | Enable Registry Authentication                                |
 | [registry_host](#registry_host)       | -                                   | Registry Authentication Host                                  |
 | [registry_user](#registry_user)       | -                                   | Registry Authentication Username                              |
 | [registry_pass](#registry_pass)       | -                                   | Registry Authentication Password                              |
@@ -44,22 +44,21 @@ Example: `cool-stack`
 
 Stack file or Compose file(s).
 
-_Swarm._ Only supports 1 file per stack.
-
 _Compose._ [Multiple files](https://docs.docker.com/compose/how-tos/multiple-compose-files/) can be provided, **space seperated**,
 and the `-f` flag will be automatically prepended to each file.
 
 Example: `web.yaml db.yaml`  
 Output: `-f web.yaml -f db.yaml`
 
+_Swarm._ Only supports 1 file per stack.
+
+Default: `docker-compose.yaml`
+
 ### mode <Badge type="tip" text="Compose Only" />
 
-Enable Docker Compose mode by setting this to `compose`.
+Set this to `compose` to use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/) for non-swarm hosts.
 
-Ths deploy will use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/)
-instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/deploy/) for non-swarm hosts.
-
-Example: `compose`
+Default: `swarm`
 
 ### args <Badge type="tip" text="Compose Only" />
 
@@ -68,14 +67,14 @@ The `detach` flag defaults to false for compose. With no args the default is `--
 Use an empty string to override. For more details, see the compose
 [docs](https://docs.docker.com/reference/cli/docker/compose/up/).
 
-Example: `--remove-orphans --force-recreate`
+Default: `--remove-orphans --force-recreate`
 
 ### host <Badge type="warning" text="Required" />
 
 The hostname or IP address of the remote docker server to deploy too.
 If your hostname is behind a proxy like Cloudflare you will need to use the IP address.
 
-If you don't know your Public IP, you may be able to find it using one of these commands.
+You may be able to find your Public IP with one of these commands.
 
 ::: code-group
 
@@ -99,11 +98,9 @@ dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
 
 ### port
 
-SSH Port. The default is 22.
+SSH Port. Only set this if using a non-standard port.
 
-Only set this if using a non-standard port.
-
-Example: `2222`
+Default: `22`
 
 ### user <Badge type="warning" text="Required" />
 
@@ -133,7 +130,7 @@ The authorized_keys file entry is [cleaned up](https://github.com/cssnr/stack-de
 
 You must provide either a `ssh_key` or [pass](#pass), but **not** both.
 
-To generate an SSH key, run the following as the [user](#user) you are using:
+To generate an SSH key, run the following as the deployment [user](#user):
 
 ::: code-group
 
@@ -153,6 +150,10 @@ cat ~/.ssh/id_ed25519
 
 This will disable the [ssh-keyscan](https://linux.die.net/man/1/ssh-keyscan) command. **Advanced usage only.**
 
+Enabling this will **break** deployments unless you know what you are doing.
+
+Default: `false`
+
 ### env_file {#env_file}
 
 Variables in this file are exported before running stack deploy.
@@ -170,21 +171,29 @@ That is set in your compose file as normal.
 Set this to `false` to not exit immediately and wait for the services to converge.
 This will generate extra output in the logs and is useful for debugging deployments.
 
-Defaults to `false` in `mode: compose`.
+_Compose_. The detach flag is implied in compose.
 
-See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
+_See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details._
+
+Default: `true`
 
 ### prune
 
 Prune dangling images. Set to `true` to enable.
 
-See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
+_See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details._
+
+Default: `false`
 
 ### resolve_image <Badge type="tip" text="Swarm Only" /> {#resolve_image}
 
+Can be one of: [`always`, `changed`, `never`]
+
 When the default `always` is used, this argument is omitted.
 
-See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
+_See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details._
+
+Default: `always`
 
 ### registry_auth <Badge type="tip" text="Swarm Only" /> {#registry_auth}
 
@@ -192,7 +201,9 @@ Set to `true` to deploy with `--with-registry-auth`.
 
 If setting [registry_user](#registry_user)/[registry_pass](#registry_pass) this is implied.
 
-See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
+_See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details._
+
+Default: `false`
 
 ### registry_host {#registry_host}
 
@@ -212,4 +223,6 @@ Required to run [docker login](https://docs.docker.com/reference/cli/docker/logi
 
 Write a Summary for the job. To disable this set to `false`.
 
-For more information see [Job Summary](../guides/features.md#job-summary).
+_For more information see [Job Summary](../guides/features.md#job-summary)._
+
+Default: `true`

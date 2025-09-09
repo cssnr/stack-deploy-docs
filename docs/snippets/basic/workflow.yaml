@@ -1,13 +1,10 @@
 name: "Docker Stack Deploy"
-
 on:
   workflow_dispatch:
-
 jobs:
   deploy:
     name: "Deploy"
     runs-on: ubuntu-latest
-
     steps:
       - name: "Checkout"
         uses: actions/checkout@v5
