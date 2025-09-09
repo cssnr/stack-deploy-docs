@@ -34,7 +34,7 @@ The inputs are organized in a table for quick [reference](#reference) with addit
 
 ## Details
 
-### name
+### name <Badge type="warning" text="Required" />
 
 Swarm sack name or Compose project name.
 
@@ -52,7 +52,7 @@ and the `-f` flag will be automatically prepended to each file.
 Example: `web.yaml db.yaml`  
 Output: `-f web.yaml -f db.yaml`
 
-### mode <Badge type="warning" text="Compose Only" />
+### mode <Badge type="tip" text="Compose Only" />
 
 Enable Docker Compose mode by setting this to `compose`.
 
@@ -61,7 +61,7 @@ instead of [stack deploy](https://docs.docker.com/reference/cli/docker/stack/dep
 
 Example: `compose`
 
-### args <Badge type="warning" text="Compose Only" /> {#args}
+### args <Badge type="tip" text="Compose Only" />
 
 Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
 The `detach` flag defaults to false for compose. With no args the default is `--remove-orphans --force-recreate`.
@@ -70,7 +70,7 @@ Use an empty string to override. For more details, see the compose
 
 Example: `--remove-orphans --force-recreate`
 
-### host
+### host <Badge type="warning" text="Required" />
 
 The hostname or IP address of the remote docker server to deploy too.
 If your hostname is behind a proxy like Cloudflare you will need to use the IP address.
@@ -97,7 +97,7 @@ dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
 
 :::
 
-### pass/ssh_key
+### pass/ssh_key <Badge type="warning" text="Required" /> {#pass-ssh-key}
 
 You must provide either a `pass` or `ssh_key`, but **not** both.
 
@@ -137,7 +137,7 @@ _Compose._ You can also add to the [args](#args) with `--env-file stringArray`.
 That is set in your compose file as normal.
 :::
 
-### detach <Badge type="warning" text="Swarm Only" /> {#detach}
+### detach <Badge type="tip" text="Swarm Only" />
 
 Set this to `false` to not exit immediately and wait for the services to converge.
 This will generate extra output in the logs and is useful for debugging deployments.
@@ -146,13 +146,13 @@ Defaults to `false` in `mode: compose`.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### resolve_image <Badge type="warning" text="Swarm Only" /> {#resolve-image}
+### resolve_image <Badge type="tip" text="Swarm Only" /> {#resolve-image}
 
 When the default `always` is used, this argument is omitted.
 
 See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details.
 
-### registry_auth <Badge type="warning" text="Swarm Only" /> {#registry-auth}
+### registry_auth <Badge type="tip" text="Swarm Only" /> {#registry-auth}
 
 Set to `true` to deploy with `--with-registry-auth`.
 
