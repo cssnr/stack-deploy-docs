@@ -78,14 +78,14 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guides', link: '/guides/get-started', activeMatch: '/guides/' },
       { text: 'Docs', link: '/docs/inputs', activeMatch: '/docs/' },
-      { text: 'Support', link: '/support' },
+      { text: 'Help', link: '/support' },
       {
         text: 'Links',
         items: [
           { text: 'GitHub Repository', link: settings.source_repo },
           { text: 'GitHub Marketplace', link: settings.actions_url },
           { text: 'GitHub Documentation', link: settings.docs_repo },
-          { text: 'Portainer Stack Deploy', link: 'https://github.com/cssnr/portainer-stack-deploy-action' },
+          { text: 'Portainer Stack Deploy', link: 'https://portainer-deploy.cssnr.com/' },
           { text: 'Developer Site', link: 'https://cssnr.github.io/' },
           { text: 'Contribute', link: 'https://ko-fi.com/cssnr' },
         ],

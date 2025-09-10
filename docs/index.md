@@ -30,12 +30,9 @@ features:
   - title: Documentation
     details: Read the Documentation
     link: /docs/inputs
-  #- title: Get Support
-  #  details: Get Help with Anything
-  #  link: /support
   - title: Portainer
     details: Deploy Directly to Portainer
-    link: https://github.com/cssnr/portainer-stack-deploy-action
+    link: https://portainer-deploy.cssnr.com/
 ---
 
 <style>

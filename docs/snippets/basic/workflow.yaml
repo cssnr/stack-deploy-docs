@@ -8,9 +8,7 @@ jobs:
     steps:
       - name: "Checkout"
         uses: actions/checkout@v5
-
       # Add Steps to Prepare Your Stack File or Environment...
-
       - name: "Stack Deploy"
         uses: cssnr/stack-deploy-action@v1
         with:
