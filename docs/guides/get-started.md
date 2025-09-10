@@ -94,6 +94,6 @@ For more details see the [README.md](https://github.com/cssnr/portainer-stack-de
 
 &nbsp;
 
-::: info FEATURE REQUEST
+::: tip Request a Feature
 If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
 :::

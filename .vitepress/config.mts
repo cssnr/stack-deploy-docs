@@ -38,7 +38,7 @@ export default defineConfig({
     config(md) {
       md.use(groupIconMdPlugin)
     },
-    // toc: { level: [2] },
+    toc: { level: [2] },
   },
 
   title: settings.title,
