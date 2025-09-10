@@ -15,7 +15,7 @@ See the [Inputs Documentation](../docs/inputs.md) for more options.
 
 You can [get started here](get-started.md) or view [workflow examples](examples.md).
 
-::: info FEATURE REQUEST
+::: tip Request a Feature
 If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
 :::
 

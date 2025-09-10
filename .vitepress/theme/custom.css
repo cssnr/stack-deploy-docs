@@ -17,6 +17,10 @@ summary {
     cursor: pointer;
 }
 
+table th {
+    text-wrap: nowrap;
+}
+
 .vp-doc img {
     display: inline-block;
     margin-right: 8px;

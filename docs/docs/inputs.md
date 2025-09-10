@@ -1,10 +1,6 @@
 # Inputs
 
-The inputs are organized in a table for quick [reference](#reference) with additional [details](#details) below.
-
-## Reference
-
-💡 You can click on an input for more [Details](#details).
+💡 Click on the **Input Name** for more [Details](#details).
 
 | Input&nbsp;Name                       | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
 | :------------------------------------ | :---------------------------------- | :------------------------------------------------------------ |
@@ -161,7 +157,7 @@ If you need compose file templating this can also be done in a previous step.
 
 _Compose._ You can also add to the [args](#args) with `--env-file stringArray`.
 
-::: tip IMPORTANT
+::: info
 **This is NOT** the Docker compose [env_file](https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/#use-the-env_file-attribute) directive.
 That is set in your compose file as normal.
 :::
@@ -179,7 +175,7 @@ Default: `true`
 
 ### prune
 
-Prune dangling images. Set to `true` to enable.
+Prune services that are no longer referenced. Set to `true` to enable.
 
 _See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/stack/deploy/#options) for more details._
 
@@ -223,6 +219,6 @@ Required to run [docker login](https://docs.docker.com/reference/cli/docker/logi
 
 Write a Summary for the job. To disable this set to `false`.
 
-_For more information see [Job Summary](../guides/features.md#job-summary)._
+For more information see [Job Summary](../guides/features.md#job-summary).
 
 Default: `true`
