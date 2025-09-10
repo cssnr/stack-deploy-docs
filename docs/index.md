@@ -30,7 +30,7 @@ features:
   - title: Documentation
     details: Read the Documentation
     link: /docs/inputs
-  - title: Portainer
+  - title: Portainer Deploy
     details: Deploy Directly to Portainer
     link: https://portainer-deploy.cssnr.com/
 ---

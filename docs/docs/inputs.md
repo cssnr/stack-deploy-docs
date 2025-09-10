@@ -130,14 +130,14 @@ To generate an SSH key, run the following as the deployment [user](#user):
 
 ::: code-group
 
-```shell [rsa ~vscode-icons:file-type-shell~]
-ssh-keygen -f ~/.ssh/id_rsa -N ""
-cat ~/.ssh/id_rsa
+```shell [ed25519 ~vscode-icons:file-type-shell~]
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
+cat ~/.ssh/id_ed25519
 ```
 
-```shell [ed25519 ~vscode-icons:file-type-shell~]
-ssh-keygen -f ~/.ssh/id_ed25519 -N ""
-cat ~/.ssh/id_ed25519
+```shell [rsa ~vscode-icons:file-type-shell~]
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
+cat ~/.ssh/id_rsa
 ```
 
 :::
