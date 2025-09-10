@@ -19,8 +19,8 @@ This action was built from the ground up to deploy a Docker swarm stack
 then updated to allow Docker compose deployments.
 
 The goal of this action is to be the ultimate Docker deployment action on GitHub.
-To date every [issue](https://github.com/cssnr/stack-deploy-action/issues) has been fixed
-and all [feature requests](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests) have been added.
+To date all [issue](https://github.com/cssnr/stack-deploy-action/issues) have been fixed
+and all [feature requests](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests) added.
 
 ::: warning
 None of these actions have been tested. This is an exhaustive list of published actions.

@@ -43,22 +43,6 @@ If using the `workflow_dispatch` trigger you can [manually run the job](https://
 
 > See the [Inputs Documentation](../docs/inputs.md) for more options to customize your deployment.
 
-## Secrets
-
-You should store your credentials in [GitHub Actions Secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
-
-The [SSH key](../docs/inputs.md#ssh_key) should be copied and pasted exactly as it appears in the private key file.
-
-You do not need to add all values as a secret. However, be aware that any inputs not added as a secret,
-will be visible in the [GitHub Actions Logs](https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs).
-
-Likewise, if you add your GitHub username or the port number 22 as a secret,
-these values will be replaced with `***`'s anywhere they appear in the logs, including repository names.
-
-If working within an [GitHub Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations)
-you can create these secrets in the organization and make them available to all your repositories.
-_This is why I use the [cssnr](https://github.com/cssnr) organization._
-
 ## Command
 
 The command used to deploy the stack is generated depending on mode.
@@ -81,6 +65,22 @@ You can view the full deployment script on GitHub: [src/main.sh](https://github.
 
 > See the [Inputs Documentation](../docs/inputs.md) for more options to customize the deployment.
 
+## Secrets
+
+You should store your credentials in [GitHub Actions Secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
+
+The [SSH key](../docs/inputs.md#ssh_key) should be copied and pasted exactly as it appears in the private keyfile.
+
+You do not need to add all values as a secret. However, be aware that any inputs not added as a secret,
+will be visible in the [GitHub Actions Logs](https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs).
+
+Likewise, if you add your GitHub username or the port number 22 as a secret,
+these values will be replaced with `***`'s anywhere they appear in the logs, including repository names.
+
+If working within an [GitHub Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations)
+you can create these secrets in the organization and make them available to all your repositories.
+_This is why I use the [cssnr](https://github.com/cssnr) organization._
+
 ## Portainer
 
 If you use Portainer, you should deploy directly to [Portainer](https://www.portainer.io/resources/get-started/install) for full control.
@@ -89,8 +89,7 @@ For this you should use: [cssnr/portainer-stack-deploy-action](https://github.co
 
 - https://github.com/marketplace/actions/portainer-stack-deploy-action
 
-For more details see the [README.md](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#readme) on GitHub.
-[Support](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#Support) is also available.
+For more details visit the website: https://portainer-deploy.cssnr.com/
 
 &nbsp;
 

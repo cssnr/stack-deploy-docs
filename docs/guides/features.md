@@ -10,8 +10,7 @@ using a [Remote Context](#remote-context). This deploys the stack from the curre
 - [Job Summary](#job-summary) with deployment output, including errors.
 - Supports multiple compose [files](../docs/inputs.md#file) and stack deployments.
 - Allows setting custom [arguments](../docs/inputs.md#args) for the deployment command.
-
-See the [Inputs Documentation](../docs/inputs.md) for more options.
+- **To view all features see the [Inputs Documentation](../docs/inputs.md).**
 
 You can [get started here](get-started.md) or view [workflow examples](examples.md).
 

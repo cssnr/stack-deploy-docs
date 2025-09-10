@@ -45,6 +45,7 @@ export default defineConfig({
   description: settings.description.short,
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    // ['link', { rel: 'icon', type: 'image/svg', sizes: 'any', href: '/images/logo/logo.svg' }],
     ['link', { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: '/apple-touch-icon.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/logo/logo32.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/logo/logo16.png' }],
@@ -148,7 +149,7 @@ export default defineConfig({
 
     editLink: {
       pattern: `${settings.docs_repo}/blob/master/docs/:path`,
-      text: 'View on GitHub',
+      text: 'View or Edit on GitHub',
     },
 
     lastUpdated: {
