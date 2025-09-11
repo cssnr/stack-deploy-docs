@@ -28,7 +28,11 @@ _If creating a [new workflow](https://docs.github.com/en/actions/concepts/workfl
 The only 4 required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), [user](../docs/inputs.md#user)
 and [pass](../docs/inputs.md#pass) or [ssh_key](../docs/inputs.md#ssh_key) _(not both)_.
 
-> See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
+<div class="tip custom-block" style="padding-top: 8px">
+
+See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
+
+</div>
 
 ## Usage
 
@@ -41,7 +45,11 @@ If using the [env_file](https://docs.docker.com/compose/how-tos/environment-vari
 The workflow runs based on the [events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows) defined in the `on:` parameter.
 If using the `workflow_dispatch` trigger you can [manually run the job](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow) at any time.
 
-> See the [Inputs Documentation](../docs/inputs.md) for more options to customize your deployment.
+<div class="tip custom-block" style="padding-top: 8px">
+
+See the [Inputs Documentation](../docs/inputs.md) for more options to customize your deployment.
+
+</div>
 
 ## Command
 
@@ -63,7 +71,11 @@ docker compose ${STACK_FILES[@]} -p ${INPUT_NAME} up -d -y ${EXTRA_ARGS[@]}
 
 You can view the full deployment script on GitHub: [src/main.sh](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh)
 
-> See the [Inputs Documentation](../docs/inputs.md) for more options to customize the deployment.
+<div class="tip custom-block" style="padding-top: 8px">
+
+See the [Inputs Documentation](../docs/inputs.md) for more options to customize the deployment.
+
+</div>
 
 ## Secrets
 
