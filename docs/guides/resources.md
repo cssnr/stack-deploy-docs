@@ -26,6 +26,8 @@ and all [feature requests](https://github.com/cssnr/stack-deploy-action/discussi
 None of these actions have been tested. This is an exhaustive list of published actions.
 :::
 
+<!-- Sort Order - 1: Stars - 2: Forks - 3: Updated -->
+
 <StackTable
 :repos="[
 'cssnr/stack-deploy-action',
@@ -44,9 +46,9 @@ None of these actions have been tested. This is an exhaustive list of published 
 'djnotes/github-action-ssh-docker-compose',
 'hasnat/deploy-docker-compose',
 'shockhs/docker-stack-deploy',
-'open-fringecore/docker-ssh-push',
 'alcharra/docker-deploy-action-go',
 'erwanclx/docker-remote-deployment-action',
+'open-fringecore/docker-ssh-push',
 'humbertocrispim/ssh-docker-compose-action',
 'jacobjove/deploy-docker-ssh',
 '5eqn/docker-compose-remote-action',
@@ -71,12 +73,12 @@ None of these actions have been tested. This is an exhaustive list of published 
 'dombyte/docker-deploy',
 'modcraftmc/custom-docker-compose-ssh-deployment',
 'anilrajrimal1/ecr-docker-ssh-deployer',
-'hantastic3/ssh-deploy-action',
 'tristiisch/docker-stack-deployment',
+'hantastic3/ssh-deploy-action',
 'sovarto/deploy-swarm-service',
 'leonidgrishenkov/docker-stack-deploy',
-'harrisonratcliffe/github-action-docker-swarm-deploy',
 'xfathurrahman/tailscale-stack-deploy-action',
+'harrisonratcliffe/github-action-docker-swarm-deploy',
 'qdrx/stack-deploy-action',
 'deriannavy/docker-context-action',
 'Autom3/docker-deployment-action',

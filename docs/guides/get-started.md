@@ -28,9 +28,13 @@ _If creating a [new workflow](https://docs.github.com/en/actions/concepts/workfl
 The only 4 required inputs are [name](../docs/inputs.md#name), [host](../docs/inputs.md#host), [user](../docs/inputs.md#user)
 and [pass](../docs/inputs.md#pass) or [ssh_key](../docs/inputs.md#ssh_key) _(not both)_.
 
+Check out the [Rolling Tags](features.md#rolling-tags) for more tag options, however `@v1` is recommended.
+
+[![Latest Version](https://img.shields.io/github/v/release/cssnr/stack-deploy-action?style=for-the-badge&logo=github&label=Latest%20Release)](https://github.com/cssnr/stack-deploy-action/releases)
+
 <div class="tip custom-block" style="padding-top: 8px">
 
-See the [Inputs Documentation](../docs/inputs.md) for more options and **default** values.
+See the [Inputs Documentation](../docs/inputs.md) for additional options and **default values**.
 
 </div>
 
@@ -47,7 +51,7 @@ If using the `workflow_dispatch` trigger you can [manually run the job](https://
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-See the [Inputs Documentation](../docs/inputs.md) for more options to customize your deployment.
+See the [Inputs Documentation](../docs/inputs.md) for more options and detailed usage.
 
 </div>
 
