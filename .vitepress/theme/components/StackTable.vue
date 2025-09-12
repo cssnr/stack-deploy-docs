@@ -5,13 +5,23 @@ const props = defineProps({
 })
 
 function getLink(type, repo) {
-  const links = {
+  return {
     stars: `https://img.shields.io/github/stars/${repo}?style=${props.style}&label=%20&color=forestgreen`,
     forks: `https://img.shields.io/github/forks/${repo}?style=${props.style}&label=%20&color=blue`,
     last: `https://img.shields.io/github/last-commit/${repo}?display_timestamp=committer&style=${props.style}&label=%20`,
     language: `https://img.shields.io/github/languages/top/${repo}?style=${props.style}`,
-  }
-  return links[type]
+  }[type]
+}
+
+function getType(type) {
+  return (
+    {
+      0: '❌',
+      1: '📋',
+      2: '🐳',
+      3: '✅',
+    }[Number(type)] ?? '❔'
+  )
 }
 </script>
 
@@ -20,16 +30,18 @@ function getLink(type, repo) {
     <thead>
       <tr>
         <th>Repositories - {{ props.repos.length }}</th>
+        <th class="center" style="padding: 0">▶️</th>
         <th class="center" style="padding: 0">⭐🍴</th>
         <th class="center">Updated</th>
         <th>Language</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="repo in props.repos" :key="repo">
+      <tr v-for="[repo, type] in props.repos" :key="repo">
         <td class="repository">
           <a :href="`https://github.com/${repo}`" :title="repo" target="_blank" rel="noopener">{{ repo }}</a>
         </td>
+        <td colspan="center">{{ getType(type) }}</td>
         <td class="center">
           <a :href="`https://github.com/${repo}/stargazers`" target="_blank" rel="noopener">
             <img alt="S" :src="getLink('stars', repo)" style="margin-right: 4px"
