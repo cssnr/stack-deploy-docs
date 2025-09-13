@@ -4,10 +4,11 @@
     "build": "vitepress build .",
     "preview": "vitepress preview .",
     "prettier": "npx prettier --check .",
-    "get-contributors": "node .vitepress/get-contributors.js cssnr/stack-deploy-action",
+    "get-contributors": "npx get-contributors cssnr/stack-deploy-action",
     "postinstall": "npm run get-contributors"
   },
   "dependencies": {
+    "@cssnr/vitepress-plugin-contributors": "^0.0.1",
     "vitepress": "^1.6.4",
     "vitepress-plugin-group-icons": "^1.6.3"
   },
