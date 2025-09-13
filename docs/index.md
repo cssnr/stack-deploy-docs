@@ -75,4 +75,4 @@ div.badges {
 
 </div>
 
-<Contributors heading="Contributors"  margin="36px 0 96px" />
+<Contributors :contributors="$contributors" heading="Contributors"  margin="36px 0 96px" />
