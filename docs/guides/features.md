@@ -87,3 +87,17 @@ You can view the release notes for each version on the [releases](https://github
 
 The **Major** tag is recommended. It is the most up-to-date and always backwards compatible.
 Breaking changes would result in a **Major** version bump. At a minimum you should use a **Minor** tag.
+
+### Tags Security Notice
+
+As shown above, tags are mutable; however, **commit hashes are not**. Therefore,
+if security is your top priority, you should pin your actions to a specific commit hash.
+
+- [GitHub Documentation](https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions)
+- [Article by StepSecurity](https://www.stepsecurity.io/blog/pinning-github-actions-for-enhanced-security-a-complete-guide)
+
+&nbsp;
+
+::: tip Action Comparison
+There is also an [Action Comparison](resources.md#action-comparison) on the [Resources](resources.md) guide.
+:::
