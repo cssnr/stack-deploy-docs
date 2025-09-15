@@ -10,6 +10,7 @@ const props = defineProps({
 const copied = ref(false)
 
 const doCopy = (text) => {
+  // console.log(`CopyButton - text: "${text}"`)
   if (!text) return console.warn('CopyButton - No Text')
   navigator.clipboard.writeText(text)
   copied.value = true
@@ -22,7 +23,6 @@ const copyText = (event) => {
   const target = event.currentTarget
   if (copied.value) return
   if (props.text) {
-    // console.log(`props.text: "${props.text}"`)
     doCopy(props.text)
   } else {
     let text
@@ -32,7 +32,6 @@ const copyText = (event) => {
       text = target.parentElement?.firstChild?.textContent
       text = text?.replaceAll(/[\u200B-\u200D\uFEFF]/g, '').trim()
     }
-    // console.log(`text: "${text}"`)
     doCopy(text)
   }
 }
