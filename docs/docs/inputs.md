@@ -30,13 +30,13 @@
 
 ## Details
 
-### name <Badge type="warning" text="Required" />
+### name <CopyButton /> <Badge type="warning" text="Required" />
 
 Swarm sack name or Compose project name.
 
 Example: `cool-stack`
 
-### file
+### file <CopyButton />
 
 Stack file or Compose file(s).
 
@@ -50,13 +50,13 @@ _Swarm._ Only supports 1 file per stack.
 
 Default: `docker-compose.yaml`
 
-### mode <Badge type="tip" text="Compose Only" />
+### mode <CopyButton /> <Badge type="tip" text="Compose Only" />
 
 Set this to `compose` to use [compose up](https://docs.docker.com/reference/cli/docker/compose/up/) for non-swarm hosts.
 
 Default: `swarm`
 
-### args <Badge type="tip" text="Compose Only" />
+### args <CopyButton /> <Badge type="tip" text="Compose Only" />
 
 Compose arguments to pass to the `compose up` command. Only used for `mode: compose` deployments.
 The `detach` flag defaults to false for compose. With no args the default is `--remove-orphans --force-recreate`.
@@ -65,7 +65,7 @@ Use an empty string to override. For more details, see the compose
 
 Default: `--remove-orphans --force-recreate`
 
-### host <Badge type="warning" text="Required" />
+### host <CopyButton /> <Badge type="warning" text="Required" />
 
 The hostname or IP address of the remote docker server to deploy too.
 If your hostname is behind a proxy like Cloudflare you will need to use the IP address.
@@ -92,13 +92,13 @@ dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
 
 :::
 
-### port
+### port <CopyButton />
 
 SSH Port. Only set this if using a non-standard port.
 
 Default: `22`
 
-### user <Badge type="warning" text="Required" />
+### user <CopyButton /> <Badge type="warning" text="Required" />
 
 SSH Username. This user **must** have permissions to access docker.
 
@@ -114,7 +114,7 @@ sudo usermod -aG docker mynewuser
 After this you should be able to run `docker` commands as `mynewuser` without `sudo`.
 Note, you may need to log out and back in for the changes to take effect.
 
-### pass <Badge type="warning" text="Required" />
+### pass <CopyButton /> <Badge type="warning" text="Required" />
 
 You must provide either a `pass` or [ssh_key](#ssh_key), but **not** both.
 
@@ -122,7 +122,7 @@ When using a password, a temporary key is generated using [ssh-keygen](https://l
 and copied to the host with [ssh-copy-id](https://linux.die.net/man/1/ssh-copy-id) using [sshpass](https://linux.die.net/man/1/sshpass).
 The authorized_keys file entry is [cleaned up](https://github.com/cssnr/stack-deploy-action/blob/master/src/main.sh#L10) after each deploy.
 
-### ssh_key <Badge type="warning" text="Required" /> {#ssh_key}
+### ssh_key <CopyButton /> <Badge type="warning" text="Required" /> {#ssh_key}
 
 You must provide either a `ssh_key` or [pass](#pass), but **not** both.
 
@@ -142,7 +142,7 @@ cat ~/.ssh/id_rsa
 
 :::
 
-### disable_keyscan {#disable_keyscan}
+### disable_keyscan <CopyButton /> {#disable_keyscan}
 
 This will disable the [ssh-keyscan](https://linux.die.net/man/1/ssh-keyscan) command. **Advanced usage only.**
 
@@ -150,7 +150,7 @@ Enabling this will **break** deployments unless you know what you are doing.
 
 Default: `false`
 
-### env_file {#env_file}
+### env_file <CopyButton /> {#env_file}
 
 Variables in this file are exported before running stack deploy.
 If you need compose file templating this can also be done in a previous step.
@@ -162,7 +162,7 @@ _Compose._ You can also add to the [args](#args) with `--env-file stringArray`.
 That is set in your compose file as normal.
 :::
 
-### detach <Badge type="tip" text="Swarm Only" />
+### detach <CopyButton /> <Badge type="tip" text="Swarm Only" />
 
 Set this to `false` to not exit immediately and wait for the services to converge.
 This will generate extra output in the logs and is useful for debugging deployments.
@@ -173,7 +173,7 @@ _See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/sta
 
 Default: `true`
 
-### prune
+### prune <CopyButton />
 
 Prune services that are no longer referenced. Set to `true` to enable.
 
@@ -181,7 +181,7 @@ _See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/sta
 
 Default: `false`
 
-### resolve_image <Badge type="tip" text="Swarm Only" /> {#resolve_image}
+### resolve_image <CopyButton /> <Badge type="tip" text="Swarm Only" /> {#resolve_image}
 
 Can be one of: [`always`, `changed`, `never`]
 
@@ -191,7 +191,7 @@ _See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/sta
 
 Default: `always`
 
-### registry_auth <Badge type="tip" text="Swarm Only" /> {#registry_auth}
+### registry_auth <CopyButton /> <Badge type="tip" text="Swarm Only" /> {#registry_auth}
 
 Set to `true` to deploy with `--with-registry-auth`.
 
@@ -201,21 +201,21 @@ _See the [stack deploy Options](https://docs.docker.com/reference/cli/docker/sta
 
 Default: `false`
 
-### registry_host {#registry_host}
+### registry_host <CopyButton /> {#registry_host}
 
 To run [docker login](https://docs.docker.com/reference/cli/docker/login/) on another registry.
 
 Example: `ghcr.io`
 
-### registry_pass {#registry_pass}
+### registry_pass <CopyButton /> {#registry_pass}
 
 Required to run [docker login](https://docs.docker.com/reference/cli/docker/login/) before stack deploy.
 
-### registry_user {#registry_user}
+### registry_user <CopyButton /> {#registry_user}
 
 Required to run [docker login](https://docs.docker.com/reference/cli/docker/login/) before stack deploy.
 
-### summary
+### summary <CopyButton />
 
 Write a Summary for the job. To disable this set to `false`.
 
