@@ -2,27 +2,27 @@
 
 💡 Click on the **Input Name** for more [Details](#details).
 
-| Input&nbsp;Name                                           | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
-| :-------------------------------------------------------- | :---------------------------------- | :------------------------------------------------------------ |
-| <CopyButton next /> [name](#name) **\***                  | -                                   | Docker Stack/Project Name                                     |
-| <CopyButton next /> [file](#file)                         | `docker-compose.yaml`               | Docker Stack/Compose File(s)                                  |
-| <CopyButton next /> [mode](#mode) **¹**                   | `swarm`                             | Deploy Mode [`swarm`, `compose`]                              |
-| <CopyButton next /> [args](#args) **¹**                   | `--remove-orphans --force-recreate` | Additional **Compose** Arguments                              |
-| <CopyButton next /> [host](#host) **\***                  | -                                   | Remote Docker Hostname or IP                                  |
-| <CopyButton next /> [port](#port)                         | `22`                                | Remote Docker Port                                            |
-| <CopyButton next /> [user](#user) **\***                  | -                                   | Remote Docker Username                                        |
-| <CopyButton next /> [pass](#pass) **\***                  | -                                   | Remote Docker Password                                        |
-| <CopyButton next /> [ssh_key](#ssh_key) **\***            | -                                   | Remote SSH Key File                                           |
-| <CopyButton next /> [disable_keyscan](#disable_keyscan)   | `false`                             | Disable SSH Keyscan `ssh-keyscan`                             |
-| <CopyButton next /> [env_file](#env_file)                 | -                                   | Exported Environment File                                     |
-| <CopyButton next /> [detach](#detach) **²**               | `true`                              | Detach Flag, `false`, to disable                              |
-| <CopyButton next /> [prune](#prune) **²**                 | `false`                             | Prune Flag, `true`, to enable                                 |
-| <CopyButton next /> [resolve_image](#resolve_image) **²** | `always`                            | Resolve [`always`, `changed`, `never`]                        |
-| <CopyButton next /> [registry_auth](#registry_auth) **²** | `false`                             | Enable Registry Authentication                                |
-| <CopyButton next /> [registry_host](#registry_host)       | -                                   | Registry Authentication Host                                  |
-| <CopyButton next /> [registry_user](#registry_user)       | -                                   | Registry Authentication Username                              |
-| <CopyButton next /> [registry_pass](#registry_pass)       | -                                   | Registry Authentication Password                              |
-| <CopyButton next /> [summary](#summary)                   | `true`                              | Add Job Summary                                               |
+| Input&nbsp;Name                                      | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
+| :--------------------------------------------------- | :---------------------------------- | :------------------------------------------------------------ |
+| [name](#name) **\*** <CopyButton />                  | -                                   | Docker Stack/Project Name                                     |
+| [file](#file) <CopyButton />                         | `docker-compose.yaml`               | Docker Stack/Compose File(s)                                  |
+| [mode](#mode) **¹** <CopyButton />                   | `swarm`                             | Deploy Mode [`swarm`, `compose`]                              |
+| [args](#args) **¹** <CopyButton />                   | `--remove-orphans --force-recreate` | Additional **Compose** Arguments                              |
+| [host](#host) **\*** <CopyButton />                  | -                                   | Remote Docker Hostname or IP                                  |
+| [port](#port) <CopyButton />                         | `22`                                | Remote Docker Port                                            |
+| [user](#user) **\*** <CopyButton />                  | -                                   | Remote Docker Username                                        |
+| [pass](#pass) **\*** <CopyButton />                  | -                                   | Remote Docker Password                                        |
+| [ssh_key](#ssh_key) **\*** <CopyButton />            | -                                   | Remote SSH Key File                                           |
+| [disable_keyscan](#disable_keyscan) <CopyButton />   | `false`                             | Disable SSH Keyscan `ssh-keyscan`                             |
+| [env_file](#env_file) <CopyButton />                 | -                                   | Exported Environment File                                     |
+| [detach](#detach) **²** <CopyButton />               | `true`                              | Detach Flag, `false`, to disable                              |
+| [prune](#prune) **²** <CopyButton />                 | `false`                             | Prune Flag, `true`, to enable                                 |
+| [resolve_image](#resolve_image) **²** <CopyButton /> | `always`                            | Resolve [`always`, `changed`, `never`]                        |
+| [registry_auth](#registry_auth) **²** <CopyButton /> | `false`                             | Enable Registry Authentication                                |
+| [registry_host](#registry_host) <CopyButton />       | -                                   | Registry Authentication Host                                  |
+| [registry_user](#registry_user) <CopyButton />       | -                                   | Registry Authentication Username                              |
+| [registry_pass](#registry_pass) <CopyButton />       | -                                   | Registry Authentication Password                              |
+| [summary](#summary) <CopyButton />                   | `true`                              | Add Job Summary                                               |
 
 > **\* Required**, note [pass](#pass)/[ssh_key](#ssh_key) are mutually exclusive.  
 > **¹ Compose Only**, view the [Compose Docs](https://docs.docker.com/reference/cli/docker/compose/up/)  
