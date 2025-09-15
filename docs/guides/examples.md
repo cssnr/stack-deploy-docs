@@ -69,7 +69,7 @@ You can disable them by passing an empty string. For more details, see the compo
 For more examples, you can check out other projects using this action:  
 https://github.com/cssnr/stack-deploy-action/network/dependents
 
-<style scoped>
+<style module>
 summary {
     color: var(--vp-c-brand-1);
 }
