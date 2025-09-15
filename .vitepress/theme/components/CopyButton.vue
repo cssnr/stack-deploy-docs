@@ -4,8 +4,18 @@ import { ref } from 'vue'
 
 const props = defineProps({
   text: { type: String, default: null },
+  next: { type: Boolean, default: false },
   all: { type: Boolean, default: false },
+  margin: { type: String, default: null },
 })
+
+const spanStyle = {}
+if (props.margin) {
+  spanStyle.margin = props.margin
+} else if (!props.next) {
+  spanStyle.marginLeft = '6px'
+}
+// console.log('spanStyle:', spanStyle)
 
 const copied = ref(false)
 
@@ -29,7 +39,11 @@ const copyText = (event) => {
     if (props.all) {
       text = target.parentElement?.textContent?.trim()
     } else {
-      text = target.parentElement?.firstChild?.textContent
+      if (props.next) {
+        text = target.nextElementSibling.textContent
+      } else {
+        text = target.parentElement?.firstChild?.textContent
+      }
       text = text?.replaceAll(/[\u200B-\u200D\uFEFF]/g, '').trim()
     }
     doCopy(text)
@@ -38,7 +52,7 @@ const copyText = (event) => {
 </script>
 
 <template>
-  <span @click="copyText" class="copy-button">
+  <span @click="copyText" :style="spanStyle" class="copy-button">
     <svg v-if="!copied" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="lucide-copy">
       <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
       <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
@@ -52,7 +66,6 @@ const copyText = (event) => {
 <style>
 .copy-button {
   display: inline-block;
-  margin-left: 6px;
   transform: translateY(-2px);
   vertical-align: middle;
 }
