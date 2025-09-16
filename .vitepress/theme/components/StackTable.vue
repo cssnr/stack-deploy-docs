@@ -41,7 +41,7 @@ function getType(type) {
         <td class="repository">
           <a :href="`https://github.com/${repo}`" :title="repo" target="_blank" rel="noopener">{{ repo }}</a>
         </td>
-        <td colspan="center">{{ getType(type) }}</td>
+        <td class="center">{{ getType(type) }}</td>
         <td class="center">
           <a :href="`https://github.com/${repo}/stargazers`" target="_blank" rel="noopener">
             <img alt="S" :src="getLink('stars', repo)" style="margin-right: 4px"
@@ -92,6 +92,7 @@ function getType(type) {
   padding: 4px;
 }
 .stack-table img {
+  display: inline-block;
   height: auto;
   width: auto;
   max-width: none;

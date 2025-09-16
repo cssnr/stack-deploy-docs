@@ -49,6 +49,8 @@ If using the [env_file](https://docs.docker.com/compose/how-tos/environment-vari
 The workflow runs based on the [events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows) defined in the `on:` parameter.
 If using the `workflow_dispatch` trigger you can [manually run the job](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow) at any time.
 
+You can also view usage [Examples](examples.md).
+
 <div class="tip custom-block" style="padding-top: 8px">
 
 See the [Inputs Documentation](../docs/inputs.md) for more options and detailed usage.

@@ -4,27 +4,27 @@
 
 <div class="table-inputs">
 
-| Input&nbsp;Name                              | Default&nbsp;Value                  | Short&nbsp;Description&nbsp;of&nbsp;the&nbsp;Input&nbsp;Value |
-| :------------------------------------------- | :---------------------------------- | :------------------------------------------------------------ |
-| [name](#name) **\*** <CB />                  | -                                   | Docker Stack/Project Name                                     |
-| [file](#file) <CB />                         | `docker-compose.yaml`               | Docker Stack/Compose File(s)                                  |
-| [mode](#mode) **¹** <CB />                   | `swarm`                             | Deploy Mode [`swarm`, `compose`]                              |
-| [args](#args) **¹** <CB />                   | `--remove-orphans --force-recreate` | Additional **Compose** Arguments                              |
-| [host](#host) **\*** <CB />                  | -                                   | Remote Docker Hostname or IP                                  |
-| [port](#port) <CB />                         | `22`                                | Remote Docker Port                                            |
-| [user](#user) **\*** <CB />                  | -                                   | Remote Docker Username                                        |
-| [pass](#pass) **\*** <CB />                  | -                                   | Remote Docker Password                                        |
-| [ssh_key](#ssh_key) **\*** <CB />            | -                                   | Remote SSH Key File                                           |
-| [disable_keyscan](#disable_keyscan) <CB />   | `false`                             | Disable SSH Keyscan `ssh-keyscan`                             |
-| [env_file](#env_file) <CB />                 | -                                   | Exported Environment File                                     |
-| [detach](#detach) **²** <CB />               | `true`                              | Detach Flag, `false`, to disable                              |
-| [prune](#prune) **²** <CB />                 | `false`                             | Prune Flag, `true`, to enable                                 |
-| [resolve_image](#resolve_image) **²** <CB /> | `always`                            | Resolve [`always`, `changed`, `never`]                        |
-| [registry_auth](#registry_auth) **²** <CB /> | `false`                             | Enable Registry Authentication                                |
-| [registry_host](#registry_host) <CB />       | -                                   | Registry Authentication Host                                  |
-| [registry_user](#registry_user) <CB />       | -                                   | Registry Authentication Username                              |
-| [registry_pass](#registry_pass) <CB />       | -                                   | Registry Authentication Password                              |
-| [summary](#summary) <CB />                   | `true`                              | Add Job Summary                                               |
+| Input&nbsp;Name                              | Default&nbsp;Value                  | Short&nbsp;Description                 |
+| :------------------------------------------- | :---------------------------------- | :------------------------------------- |
+| [name](#name) **\*** <CB />                  | -                                   | Docker Stack/Project Name              |
+| [file](#file) <CB />                         | `docker-compose.yaml`               | Docker Stack/Compose File(s)           |
+| [mode](#mode) **¹** <CB />                   | `swarm`                             | Deploy Mode [`swarm`, `compose`]       |
+| [args](#args) **¹** <CB />                   | `--remove-orphans --force-recreate` | Additional **Compose** Arguments       |
+| [host](#host) **\*** <CB />                  | -                                   | Remote Docker Hostname or IP           |
+| [port](#port) <CB />                         | `22`                                | Remote Docker Port                     |
+| [user](#user) **\*** <CB />                  | -                                   | Remote Docker Username                 |
+| [pass](#pass) **\*** <CB />                  | -                                   | Remote Docker Password                 |
+| [ssh_key](#ssh_key) **\*** <CB />            | -                                   | Remote SSH Key File                    |
+| [disable_keyscan](#disable_keyscan) <CB />   | `false`                             | Disable SSH Keyscan `ssh-keyscan`      |
+| [env_file](#env_file) <CB />                 | -                                   | Exported Environment File              |
+| [detach](#detach) **²** <CB />               | `true`                              | Detach Flag, `false`, to disable       |
+| [prune](#prune) **²** <CB />                 | `false`                             | Prune Flag, `true`, to enable          |
+| [resolve_image](#resolve_image) **²** <CB /> | `always`                            | Resolve [`always`, `changed`, `never`] |
+| [registry_auth](#registry_auth) **²** <CB /> | `false`                             | Enable Registry Authentication         |
+| [registry_host](#registry_host) <CB />       | -                                   | Registry Authentication Host           |
+| [registry_user](#registry_user) <CB />       | -                                   | Registry Authentication Username       |
+| [registry_pass](#registry_pass) <CB />       | -                                   | Registry Authentication Password       |
+| [summary](#summary) <CB />                   | `true`                              | Add Job Summary                        |
 
 </div>
 

@@ -23,6 +23,7 @@ export default {
         app.component('YouTubeEmbed', YouTubeEmbed)
 
         app.component('CB', CopyButton)
+
         app.component('Contributors', Contributors)
         app.config.globalProperties.$contributors = contributors
     },
