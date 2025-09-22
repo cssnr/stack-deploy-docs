@@ -1,9 +1,11 @@
 {
   "scripts": {
+    "docs": "npm run dev",
     "dev": "vitepress dev .",
     "build": "vitepress build .",
     "preview": "vitepress preview .",
-    "prettier": "npx prettier --check .",
+    "prettier:check": "npx prettier --check .",
+    "prettier:write": "npx prettier --write .",
     "get-contributors": "npx get-contributors cssnr/stack-deploy-action",
     "postinstall": "npm run get-contributors"
   },
