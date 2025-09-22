@@ -159,7 +159,7 @@ Default: `false`
 Variables in this file are exported before running stack deploy.
 If you need compose file templating this can also be done in a previous step.
 
-_Compose._ You can also add to the [args](#args) with `--env-file stringArray`.
+_Compose._ You can also add to the [args](#args) with `--env-file stringArray` <CB prev />
 
 ::: info
 **This is NOT** the Docker compose [env_file](https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/#use-the-env_file-attribute) directive.

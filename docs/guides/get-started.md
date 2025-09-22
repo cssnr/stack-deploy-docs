@@ -16,7 +16,7 @@ _You can also view the [features](features.md) and additional [examples](example
 
 Add the step to an existing workflow or create a new one.
 
-_If creating a [new workflow](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows#about-workflows), place it in the `.github/workflows` directory._
+_If creating a [new workflow](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows#about-workflows), place it in the `.github/workflows` <CB prev margin="0 8px 0" /> directory._
 
 ::: code-group
 <<< @/snippets/basic/step.yaml {4,5,10,11 yaml} [Existing Workflow ~vscode-icons:folder-type-github~]
