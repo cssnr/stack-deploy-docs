@@ -33,11 +33,11 @@ None of these actions have been tested. This is an exhaustive list of published 
 ❌ - Only Run, Pull, etc.
 :::
 
+<!-- To edit the repos list, update: .vitepress/vars.js -->
 <script setup>
 // noinspection ES6UnusedImports
 import { repos } from '../../.vitepress/vars.js'
 </script>
-
 <StackTable :repos="repos" />
 
 If there are any missing [features](../guides/features.md) you need,

@@ -8,7 +8,7 @@
  * 2 - 🐳 - Swarm Only
  * 1 - 📋 - Compose Only
  * 0 - ❌ - Only Run, Pull, etc.
- * @type {Array<[string, number]>} Repo, Type
+ * @type {[string, number|undefined][]} Repo, Type
  */
 export const repos = [
     ['cssnr/stack-deploy-action', 3],
@@ -33,6 +33,7 @@ export const repos = [
     ['humbertocrispim/ssh-docker-compose-action', 1],
     ['jacobjove/deploy-docker-ssh', 3],
     ['5eqn/docker-compose-remote-action', 1],
+    ['rouvenschandl/stack-deploy-action-cf-tunnel', 3],
     ['kamina7/docker-swarm-ssh-deploy-action', 2],
     ['nightstory/setup-docker-remote'],
     ['simbamarufu1/docker-swarm-deploy-action'],

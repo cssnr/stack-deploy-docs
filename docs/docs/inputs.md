@@ -1,8 +1,11 @@
+---
+title: Inputs Documentation
+pageClass: inputs-page
+---
+
 # Inputs
 
 💡 Click on the **Input Name** for more [Details](#details).
-
-<div class="table-inputs">
 
 | Input&nbsp;Name                              | Default&nbsp;Value                  | Short&nbsp;Description                 |
 | :------------------------------------------- | :---------------------------------- | :------------------------------------- |
@@ -25,8 +28,6 @@
 | [registry_user](#registry_user) <CB />       | -                                   | Registry Authentication Username       |
 | [registry_pass](#registry_pass) <CB />       | -                                   | Registry Authentication Password       |
 | [summary](#summary) <CB />                   | `true`                              | Add Job Summary                        |
-
-</div>
 
 > **\* Required**, note [pass](#pass)/[ssh_key](#ssh_key) are mutually exclusive.  
 > **¹ Compose Only**, view the [Compose Docs](https://docs.docker.com/reference/cli/docker/compose/up/)  
@@ -228,12 +229,12 @@ For more information see [Job Summary](../guides/features.md#job-summary).
 Default: `true`
 
 <style>
-.table-inputs td {
+.inputs-page td {
     padding: 8px 10px !important;
 }
 
-.table-inputs td:nth-child(1),
-.table-inputs td:nth-child(3) {
+.inputs-page td:nth-child(1),
+.inputs-page td:nth-child(3) {
     white-space: nowrap;
 }
 </style>

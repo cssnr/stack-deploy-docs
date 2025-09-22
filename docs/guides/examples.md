@@ -1,3 +1,7 @@
+---
+pageClass: examples-page
+---
+
 # Examples
 
 [[toc]]
@@ -70,10 +74,10 @@ For more examples, you can check out other projects using this action:
 https://github.com/cssnr/stack-deploy-action/network/dependents
 
 <style>
-summary {
+.examples-page summary {
     color: var(--vp-c-brand-1);
 }
-summary:hover {
+.examples-page summary:hover {
     filter: brightness(115%);
     /*color: var(--vp-c-indigo-2);*/
     /*text-decoration: underline;*/

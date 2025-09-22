@@ -12,7 +12,9 @@ import Contributors from '@cssnr/vitepress-plugin-contributors'
 import '@cssnr/vitepress-plugin-contributors/style.css'
 import contributors from '../contributors.json'
 
+// https://vitepress.dev/guide/extending-default-theme
 // noinspection JSUnusedGlobalSymbols
+/** @type {import('vitepress').Theme} */
 export default {
     ...DefaultTheme,
 
