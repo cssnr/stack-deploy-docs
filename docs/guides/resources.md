@@ -33,6 +33,7 @@ None of these actions have been tested. This is an exhaustive list of published 
 ❌ - Only Run, Pull, etc.
 :::
 
+<!--suppress ES6UnusedImports -->
 <script setup>
 import { repos } from '../../.vitepress/vars.js'
 </script>
