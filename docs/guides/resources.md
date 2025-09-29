@@ -44,6 +44,8 @@ please submit a [feature request](https://github.com/cssnr/stack-deploy-action/d
 
 &nbsp;
 
+<!--@include: ./include/context-action.md-->
+
 ::: tip Additional Resources
 Have a related resource? Let us know by submitting a [PR](https://github.com/cssnr/stack-deploy-docs/edit/master/docs/guides/examples.md)
 or opening an [Issue](https://github.com/cssnr/stack-deploy-docs/issues) on [GitHub](https://github.com/cssnr/stack-deploy-docs).

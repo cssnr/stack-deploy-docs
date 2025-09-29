@@ -12,6 +12,8 @@ To get started, create or update your [workflow file](#workflow) and review the 
 
 _You can also view the [features](features.md) and additional [examples](examples.md)._
 
+<!--@include: ./include/context-action.md-->
+
 ## Workflow
 
 Add the step to an existing workflow or create a new one.

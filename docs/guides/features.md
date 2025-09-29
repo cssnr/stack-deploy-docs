@@ -18,6 +18,8 @@ You can [get started here](get-started.md) or view [workflow examples](examples.
 If you need more options, please [open a feature request](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)
 :::
 
+<!--@include: ./include/context-action.md-->
+
 ## Remote Context
 
 This action uses a [remote context](https://docs.docker.com/engine/manage-resources/contexts/)

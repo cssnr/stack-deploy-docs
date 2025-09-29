@@ -11,6 +11,7 @@
  */
 export const repos = [
     ['cssnr/stack-deploy-action', 3],
+    ['cssnr/docker-context-action', 3],
     ['hoverkraft-tech/compose-action', 1],
     ['wshihadeh/docker-deployment-action', 3],
     ['TapTap21/docker-remote-deployment-action', 3],

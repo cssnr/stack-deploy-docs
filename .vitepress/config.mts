@@ -76,16 +76,20 @@ export default defineConfig({
     siteTitle: settings.siteTitle,
     logo: '/images/logo/logo32.png',
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guides', link: '/guides/get-started', activeMatch: '/guides/' },
+      // { text: 'Home', link: '/' },
+      { text: 'Get Started', link: '/guides/get-started', activeMatch: '/guides/' },
       { text: 'Docs', link: '/docs/inputs', activeMatch: '/docs/' },
-      { text: 'Help', link: '/support' },
+      { text: 'Support', link: '/support' },
       {
         text: 'Links',
         items: [
           { text: 'GitHub Repository', link: settings.source_repo },
           { text: 'GitHub Marketplace', link: settings.actions_url },
           { text: 'GitHub Documentation', link: settings.docs_repo },
+          {
+            text: 'Docker Context Action',
+            link: 'https://github.com/cssnr/docker-context-action?tab=readme-ov-file#readme',
+          },
           { text: 'Portainer Stack Deploy', link: 'https://portainer-deploy.cssnr.com/' },
           { text: 'Developer Site', link: 'https://cssnr.github.io/' },
           { text: 'Contribute', link: 'https://ko-fi.com/cssnr' },

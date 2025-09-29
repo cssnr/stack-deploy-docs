@@ -30,6 +30,15 @@ features:
   - title: Documentation
     details: Read the Documentation
     link: /docs/inputs
+  - title: Examples
+    details: View Example Workflows
+    link: /guides/examples
+  - title: Support
+    details: Get Help with Anything
+    link: /support
+  - title: Docker Context Action
+    details: Setup Remote Docker Context
+    link: https://github.com/cssnr/docker-context-action?tab=readme-ov-file#readme
   - title: Portainer Deploy
     details: Deploy Directly to Portainer
     link: https://portainer-deploy.cssnr.com/
