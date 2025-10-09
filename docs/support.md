@@ -35,8 +35,6 @@ If you run into any problems or find a bug, please [open an issue](https://githu
 
 You can chat with us about anything [on discord](https://discord.gg/wXy6m2X8wY).
 
-From here you can contact me directly, `Shane@111150265075298304`.
-
 [![Chat on Discord](https://img.shields.io/badge/Chat_on_Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/wXy6m2X8wY)
 
 ### General Feedback
@@ -46,3 +44,7 @@ You can submit general feedback via the [web form](https://cssnr.github.io/feedb
 _This method is not recommended to [report issues](https://github.com/cssnr/stack-deploy-action/issues) or [request features](https://github.com/cssnr/stack-deploy-action/discussions/categories/feature-requests)._
 
 [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=Stack%20Deploy%20Action)
+
+&nbsp;
+
+[![Ko-Fi](./public/images/ko-fi.png)](https://ko-fi.com/cssnr)
