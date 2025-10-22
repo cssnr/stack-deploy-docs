@@ -97,7 +97,7 @@ jobs:
           ssh-keyscan -p "${{ env.SSH_PORT }}" -H "${{ env.SSH_HOST }}" \
             | tee -a "${HOME}/.ssh/known_hosts"
 
-      - name: "No Rubbits"
+      - name: "No Robots"
         run: |
           cat <<EOF > robots.txt
           User-agent: *
