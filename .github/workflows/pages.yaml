@@ -1,15 +1,15 @@
 name: "Pages"
 
 on:
-  push:
-    branches:
-      - "master"
-    paths:
-      - "docs/**"
-      - ".vitepress/**"
-      - "package.json"
-      - ".github/workflows/pages.yaml"
   workflow_dispatch:
+  #push:
+  #  branches:
+  #    - "master"
+  #  paths:
+  #    - "docs/**"
+  #    - ".vitepress/**"
+  #    - "package.json"
+  #    - ".github/workflows/pages.yaml"
 
 env:
   CRAWLER_ID: "7a46f2b7-7169-4936-986d-21391c3134d4"
