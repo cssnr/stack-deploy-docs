@@ -3,6 +3,7 @@ name: "Dev"
 on:
   workflow_dispatch:
   push:
+    #branches-ignore: ["master"]
     paths:
       - ".github/workflows/dev.yaml"
       - ".vitepress/**"
