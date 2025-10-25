@@ -12,7 +12,8 @@ To get started, create or update your [workflow file](#workflow) and review the 
 
 _You can also view the [features](features.md) and additional [examples](examples.md)._
 
-<!--@include: ./include/context-action.md-->
+If you need to run multiple docker commands see the [Docker Context](#docker-context) Action.
+You can also deploy directly to [Portainer](#portainer).
 
 ## Workflow
 
@@ -32,7 +33,7 @@ and [pass](../docs/inputs.md#pass) or [ssh_key](../docs/inputs.md#ssh_key) _(not
 
 Check out the [Rolling Tags](features.md#rolling-tags) for more tag options, however `@v1` is recommended.
 
-[![Latest Version](https://img.shields.io/github/v/release/cssnr/stack-deploy-action?style=for-the-badge&logo=github&label=Latest%20Release)](https://github.com/cssnr/stack-deploy-action/releases)
+<LatestVersion repo="cssnr/stack-deploy-action" />
 
 <div class="tip custom-block" style="padding-top: 8px">
 
@@ -101,11 +102,19 @@ If working within an [GitHub Organization](https://docs.github.com/en/organizati
 you can create these secrets in the organization and make them available to all your repositories.
 _This is why I use the [cssnr](https://github.com/cssnr) organization._
 
+## Docker Context
+
+This action creates a docker context in the current workflow to run any docker commands.
+
+<!--@include: ./include/context-action.md-->
+
+More details on the website: https://actions.cssnr.com/docker-context
+
 ## Portainer
 
 If you use Portainer, you should deploy directly to [Portainer](https://www.portainer.io/resources/get-started/install) for full control.
 
-For this you should use: [cssnr/portainer-stack-deploy-action](https://github.com/cssnr/portainer-stack-deploy-action)
+For this you should use [cssnr/portainer-stack-deploy-action](https://github.com/cssnr/portainer-stack-deploy-action).
 
 - https://github.com/marketplace/actions/portainer-stack-deploy-action
 

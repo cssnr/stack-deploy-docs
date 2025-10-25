@@ -3,6 +3,7 @@ import './custom.css'
 import 'virtual:group-icons.css'
 
 import StackTable from './components/StackTable.vue'
+import LatestVersion from './components/LatestVersion.vue'
 import YouTubeEmbed from './components/YouTubeEmbed.vue'
 
 import CopyButton from '@cssnr/vitepress-plugin-copybutton'
@@ -22,6 +23,7 @@ export default {
         app.component('Badge', VPBadge)
 
         app.component('StackTable', StackTable)
+        app.component('LatestVersion', LatestVersion)
         app.component('YouTubeEmbed', YouTubeEmbed)
 
         app.component('CB', CopyButton)
