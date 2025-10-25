@@ -12,7 +12,8 @@ To get started, create or update your [workflow file](#workflow) and review the 
 
 _You can also view the [features](features.md) and additional [examples](examples.md)._
 
-<!--@include: ./include/context-action.md-->
+If you need to run multiple docker commands see the [Docker Context](#docker-context) Action.
+You can also deploy directly to [Portainer](#portainer).
 
 ## Workflow
 
@@ -101,11 +102,19 @@ If working within an [GitHub Organization](https://docs.github.com/en/organizati
 you can create these secrets in the organization and make them available to all your repositories.
 _This is why I use the [cssnr](https://github.com/cssnr) organization._
 
+## Docker Context
+
+This action creates a docker context in the current workflow to run any docker commands.
+
+<!--@include: ./include/context-action.md-->
+
+More details on the website: https://actions.cssnr.com/docker-context
+
 ## Portainer
 
 If you use Portainer, you should deploy directly to [Portainer](https://www.portainer.io/resources/get-started/install) for full control.
 
-For this you should use: [cssnr/portainer-stack-deploy-action](https://github.com/cssnr/portainer-stack-deploy-action)
+For this you should use [cssnr/portainer-stack-deploy-action](https://github.com/cssnr/portainer-stack-deploy-action).
 
 - https://github.com/marketplace/actions/portainer-stack-deploy-action
 
