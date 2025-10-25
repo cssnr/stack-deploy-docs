@@ -17,6 +17,7 @@ export const repos = [
     ['TapTap21/docker-remote-deployment-action', 3],
     ['kitconcept/docker-stack-deploy', 2],
     ['serversideup/github-action-docker-swarm-deploy', 2],
+    ['FarisZR/docker-compose-gitops-action', 2],
     ['matchory/docker-swarm-deployment-action', 2],
     ['matiasnu/github-action-ssh-docker-compose', 1],
     ['chaplyk/docker-compose-remote-action', 1],

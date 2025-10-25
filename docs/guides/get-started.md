@@ -32,7 +32,7 @@ and [pass](../docs/inputs.md#pass) or [ssh_key](../docs/inputs.md#ssh_key) _(not
 
 Check out the [Rolling Tags](features.md#rolling-tags) for more tag options, however `@v1` is recommended.
 
-[![Latest Version](https://img.shields.io/github/v/release/cssnr/stack-deploy-action?style=for-the-badge&logo=github&label=Latest%20Release)](https://github.com/cssnr/stack-deploy-action/releases)
+<LatestVersion repo="cssnr/stack-deploy-action" />
 
 <div class="tip custom-block" style="padding-top: 8px">
 
