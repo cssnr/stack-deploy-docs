@@ -10,10 +10,10 @@
     "postinstall": "npm run get-contributors"
   },
   "dependencies": {
-    "@cssnr/vitepress-plugin-contributors": "^0.0.4",
+    "@cssnr/vitepress-plugin-contributors": "^0.0.5",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-group-icons": "^1.6.4"
+    "vitepress-plugin-group-icons": "^1.6.5"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
