@@ -50,6 +50,7 @@ export const repos = [
     ['goldor8/custom-docker-compose-ssh-deployment'],
     ['manugame/custom-docker-compose-ssh-deployment'],
     ['hamidfzm/docker-remote-deployment-action'],
+    ['medram/stack-deploy-action'],
     ['dombyte/docker-deploy'],
     ['revelhome/stack-deploy-action'],
     ['jrm402/docker-stack-deploy'],
