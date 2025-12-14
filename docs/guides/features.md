@@ -8,7 +8,7 @@ using a [Remote Context](#remote-context). This deploys the stack from the curre
 - Deploy from the current working [directory](#remote-context).
 - Deploy from a private registry with [credentials](../docs/inputs.md#registry_user).
 - [Job Summary](#job-summary) with deployment output, including errors.
-- Supports multiple compose [files](../docs/inputs.md#file) and stack deployments.
+- Supports multiple compose [files](../docs/inputs.md#file) for Swarm and Compose mode.
 - Allows setting custom [arguments](../docs/inputs.md#args) for the deployment command.
 - **To view all features see the [Inputs Documentation](../docs/inputs.md).**
 

@@ -30,6 +30,15 @@ pageClass: examples-page
 <<< @/snippets/examples/swarm/full.yaml [yaml]
 
 </details>
+<details><summary>Multiple Compose Files (Swarm Mode)</summary>
+
+Deploy with a base configuration and environment-specific overrides:
+
+<<< @/snippets/examples/swarm/multiple.yaml [yaml]
+
+This will merge the files in order, with `docker-compose.production.yaml` overriding values from `docker-compose.base.yaml`.
+
+</details>
 
 ## Compose
 
