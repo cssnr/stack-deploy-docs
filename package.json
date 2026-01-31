@@ -13,9 +13,9 @@
     "@cssnr/vitepress-plugin-contributors": "^0.0.5",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-group-icons": "^1.6.5"
+    "vitepress-plugin-group-icons": "^1.7.1"
   },
   "devDependencies": {
-    "prettier": "^3.7.4"
+    "prettier": "^3.8.1"
   }
 }
