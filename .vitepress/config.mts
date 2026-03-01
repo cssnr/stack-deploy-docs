@@ -6,8 +6,7 @@ const settings = {
   title: 'Docker Stack Deploy Action', // For Actual Title
   name: 'Deploy to Docker from GitHub Actions', // For Meta Tag
   description: {
-    short:
-      'Easily Deploy a Docker Swarm or Compose Stack File to a Remote Host over SSH from the Actions Workspace.',
+    short: 'Easily Deploy a Docker Swarm or Compose Stack File to a Remote Host over SSH from the Actions Workspace.',
     long: 'Easily Deploy a Docker Swarm or Compose Stack File to a Remote Docker host over SSH with Keyfile or Password Authentication from the Actions Workspace.',
   },
   image: '/images/logo/logo512.png',
