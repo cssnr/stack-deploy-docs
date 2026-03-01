@@ -14,19 +14,25 @@ concurrency:
 jobs:
   lint:
     name: "Lint"
-    if: ${{ !contains(github.event.head_commit.message, '#nolint') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    if: ${{ !contains(github.event.head_commit.message, '#nolint') }}
 
     steps:
       - name: "Checkout"
         uses: actions/checkout@v6
 
+      - name: "Debug event.json"
+        continue-on-error: true
+        run: cat "${GITHUB_EVENT_PATH}"
       - name: "Debug CTX github"
         continue-on-error: true
         env:
           GITHUB_CTX: ${{ toJSON(github) }}
         run: echo "$GITHUB_CTX"
+      - name: "Debug Environment"
+        continue-on-error: true
+        run: env
 
       - name: "Setup Node 24"
         uses: actions/setup-node@v6
@@ -42,12 +48,12 @@ jobs:
         run: |
           npm run build
 
-      #- name: "ESLint"
+      #- name: "esLint"
       #  if: ${{ !cancelled() }}
       #  run: |
       #    npm run lint
 
-      - name: "Prettier Check"
+      - name: "prettier"
         if: ${{ !cancelled() }}
         run: |
           npm run prettier:check
@@ -65,3 +71,5 @@ jobs:
       - name: "actionlint"
         if: ${{ !cancelled() }}
         uses: cssnr/actionlint-action@v1
+        with:
+          shellcheck_opts: -e SC2129

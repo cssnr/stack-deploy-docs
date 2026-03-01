@@ -64,6 +64,16 @@ features:
 
 <Contributors :contributors="$contributors" heading="Contributors"  margin="36px 0 96px" />
 
+<div style="display: flex; justify-content: center;">
+<a href="https://github.com/cssnr/stack-deploy-action/stargazers">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=cssnr/stack-deploy-action&type=date&legend=bottom-right&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=cssnr/stack-deploy-action&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=cssnr/stack-deploy-action&type=date&legend=bottom-right" />
+ </picture>
+</a>
+</div>
+
 <style>
 div.badges {
     margin-top: 80px;
