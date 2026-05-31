@@ -6,6 +6,9 @@ import StackTable from './components/StackTable.vue'
 import LatestVersion from './components/LatestVersion.vue'
 import YouTubeEmbed from './components/YouTubeEmbed.vue'
 
+import VitePressChat from '@cssnr/vitepress-chat'
+import '@cssnr/vitepress-chat/style.css'
+
 import CopyButton from '@cssnr/vitepress-plugin-copybutton'
 import '@cssnr/vitepress-plugin-copybutton/style.css'
 
@@ -15,20 +18,25 @@ import contributors from '../contributors.json'
 
 // https://vitepress.dev/guide/extending-default-theme
 // noinspection JSUnusedGlobalSymbols
-/** @type {import('vitepress').Theme} */
 export default {
-    ...DefaultTheme,
+  ...DefaultTheme,
 
-    enhanceApp({ app }) {
-        app.component('Badge', VPBadge)
+  ...VitePressChat(DefaultTheme, {
+    api: import.meta.env.VITE_AI_API,
+    headers: import.meta.env.VITE_AI_AUTH ? { Authorization: import.meta.env.VITE_AI_AUTH } : undefined,
+    instructionsFile: 'llms.txt',
+  }),
 
-        app.component('StackTable', StackTable)
-        app.component('LatestVersion', LatestVersion)
-        app.component('YouTubeEmbed', YouTubeEmbed)
+  enhanceApp({ app }) {
+    app.component('Badge', VPBadge)
 
-        app.component('CB', CopyButton)
+    app.component('StackTable', StackTable)
+    app.component('LatestVersion', LatestVersion)
+    app.component('YouTubeEmbed', YouTubeEmbed)
 
-        app.component('Contributors', Contributors)
-        app.config.globalProperties.$contributors = contributors
-    },
+    app.component('CB', CopyButton)
+
+    app.component('Contributors', Contributors)
+    app.config.globalProperties.$contributors = contributors
+  },
 }
