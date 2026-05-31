@@ -2,9 +2,9 @@ name: "Lint"
 
 on:
   workflow_dispatch:
-  push:
-    branches: [master]
   pull_request:
+    branches: [master]
+  push:
     branches: [master]
 
 concurrency:
@@ -22,19 +22,36 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v6
 
+      - name: "Debug event.json"
+        if: ${{ !github.event.act }}
+        continue-on-error: true
+        run: cat "${GITHUB_EVENT_PATH}"
+      - name: "Debug CTX github"
+        if: ${{ !github.event.act }}
+        continue-on-error: true
+        env:
+          GITHUB_CTX: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CTX"
+      - name: "Debug Environment"
+        if: ${{ !github.event.act }}
+        continue-on-error: true
+        run: env
+
       - name: "Setup Node 24"
         uses: actions/setup-node@v6
         with:
           node-version: 24
 
       - name: "Install"
-        id: install
         run: npm ci
+
+      - name: "Build"
+        if: ${{ !cancelled() }}
+        run: npm run build
 
       #- name: "eslint"
       #  if: ${{ !cancelled() }}
-      #  run: |
-      #    npm run lint
+      #  run: npm run lint
 
       - name: "prettier"
         if: ${{ !cancelled() }}
@@ -53,3 +70,5 @@ jobs:
       - name: "actionlint"
         if: ${{ !cancelled() }}
         uses: cssnr/actionlint-action@v1
+        with:
+          shellcheck_opts: -e SC2129

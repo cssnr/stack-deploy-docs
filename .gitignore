@@ -1,3 +1,4 @@
+# Generic
 .idea/
 *.iml
 .vscode/
@@ -5,4 +6,8 @@ cache/
 dist/
 build/
 node_modules/
+*.tsbuildinfo
+# VitePress
 contributors.json
+.env
+.env.development

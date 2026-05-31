@@ -35,7 +35,7 @@ These [docs](docs) are **written in plain text** using Markdown and built with [
 | [.vitepress](.vitepress)                                                 | VitePress Configuration Root                                                           |
 | [.vitepress/config.mts](.vitepress/config.mts)                           | VitePress Configuration File                                                           |
 | [.vitepress/theme](.vitepress/theme)                                     | VitePress Custom Theme Root                                                            |
-| [.vitepress/theme/index.js](.vitepress/theme/index.js)                   | VitePress Custom Theme File                                                            |
+| [.vitepress/theme/index.ts](.vitepress/theme/index.ts)                   | VitePress Custom Theme File                                                            |
 | [.vitepress/theme/custom.css](.vitepress/theme/custom.css)               | VitePress Global CSS File                                                              |
 | [.vitepress/theme/components](.vitepress/theme/components)               | VitePress Components Root                                                              |
 | [@components/StackTable.vue](.vitepress/theme/components/StackTable.vue) | StackTable Component                                                                   |

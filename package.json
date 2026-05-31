@@ -11,6 +11,7 @@
     "postinstall": "npm run get-contributors"
   },
   "dependencies": {
+    "@cssnr/vitepress-chat": "github:smashedr/vitepress-chat#0.0.8",
     "@cssnr/vitepress-plugin-contributors": "github:cssnr/vitepress-plugin-contributors#e1f3628164d82e8d368542cdf5858156dddb68e8",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.3",
     "vitepress": "^1.6.4",
