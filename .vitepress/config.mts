@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import vitePressInstructions from '@cssnr/vitepress-chat/instructions-plugin'
+import instructions from 'vitepress-chat/instructions'
 
 const settings = {
   siteTitle: 'Docker Deploy', // For Site Sidebar
@@ -17,8 +17,6 @@ const settings = {
   actions_url: 'https://github.com/marketplace/actions/docker-stack-deploy',
 }
 
-const llmExcludes = ['index.md', 'guides/examples.md', 'guides/resources.md', 'guides/include/**/*']
-
 // https://vitepress.dev/reference/site-config
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
@@ -29,7 +27,10 @@ export default defineConfig({
       allowedHosts: true,
     },
     plugins: [
-      vitePressInstructions({ exclude: llmExcludes, outputFilename: 'llms.txt' }),
+      instructions({
+        filePath: 'llms.txt',
+        exclude: ['index.md', 'guides/examples.md', 'guides/resources.md', 'guides/include/**/*'],
+      }),
       groupIconVitePlugin({
         customIcon: {
           git: 'vscode-icons:file-type-git',

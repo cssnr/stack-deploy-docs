@@ -6,8 +6,13 @@ cache/
 dist/
 build/
 node_modules/
-*.tsbuildinfo
-# VitePress
-contributors.json
+eslint_report.json
+*.log
+*.tgz
+*.zip
+# App
+.secrets
+.vars
 .env
 .env.development
+contributors.json
